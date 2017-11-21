@@ -142,7 +142,8 @@ public class GameManager : MonoBehaviour {
     }
     #endregion
 
-	public void YellScoreToMode(int pNum, PlayerMovement killedP){
-		currentGameMode.Addscore(pNum, killedP);
+	public void YellScoreToMode(int pNum, PlayerMovement killedP, bool dead){
+        if (dead) { currentGameMode.AddScoreKill(pNum, killedP);  }
+        else { currentGameMode.AddScoreDamage(pNum, killedP); }
 	}
 }

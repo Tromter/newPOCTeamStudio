@@ -14,8 +14,8 @@ MonoBehaviour:
   maxUpgradeLevel: 10
   currentLevel: 10
   timeToLevelRatio: 4
-  bulletLifeTimes: 2
-  bulletSpeeds: 18
+  bulletLifeTimes: 1.5
+  bulletSpeeds: 30
   shotCooldown: 2
   bulletScale: 0.1
   perLevelSizeBonus: 1

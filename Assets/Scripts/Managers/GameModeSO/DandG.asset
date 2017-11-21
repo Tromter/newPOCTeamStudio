@@ -23,9 +23,11 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  m_scoreToWin: 100
+  m_scoreToWin: 150
   m_gamewinner: 0
-  davidKillPoints: 5
-  goliathKillPoints: 20
+  davidKillPoints: 2
+  goliathKillPoints: 6
+  goliathKillDavidPoints: 4
+  killModifier: 2
   currentGoliath: 0
   expPerDavidOnDavid: 10

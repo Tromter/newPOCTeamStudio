@@ -183,9 +183,14 @@ public class PlayerMovement : MonoBehaviour {
     {
         if(iframesRoutine != null) { return; }
         health--;
-		if (injuryRoutine != null) { StopCoroutine(injuryRoutine); }
+        if (killerID > 0 && killerID <= GameManager.Instance.players.Count) {
+            PlayerMovement myKiller = GameManager.Instance.players[killerID - 1];
+            if(health <= 0) { Die(killerID); return; }
+            else { GameManager.Instance.YellScoreToMode(killerID, this, false); }
+        }
+        if (injuryRoutine != null) { StopCoroutine(injuryRoutine); }
 		injuryRoutine = StartCoroutine(InjuryFlash(.2f));
-        if(health <= 0) { Die(killerID); }
+        // if(health <= 0) { Die(killerID); }
     }
 
     public void HPForKill()
@@ -202,12 +207,10 @@ public class PlayerMovement : MonoBehaviour {
             {
                 PlayerMovement myKiller = GameManager.Instance.players[killerID - 1];
                 myKiller.AddScore();
-                myKiller.HPForKill();
-                GameManager.Instance.YellScoreToMode(killerID, this);
-                //if (killerID == 1)
-                //WinManager.instance.p1Kills += 1;
-                //else if (killerID == 2)
-                //WinManager.instance.p2Kills += 1;
+                transferUpgradeObject(myKiller);
+                // myKiller.HPForKill();
+                GameManager.Instance.YellScoreToMode(killerID, this, true);
+
             }
             int weapLevel = weap.GetLevel(weapExp);
             totalDeaths++;
@@ -226,17 +229,22 @@ public class PlayerMovement : MonoBehaviour {
 
             weapExp = weap.timeToLevelRatio * weapNewLevel;
             if(weapExp < 0) { weapExp = 0; }
-
-            /*
-            weapExp1 = 0f;
-            weapExp2 = 0f;
-            */
-
-
+            
             currentLifeKillCount = 0;
             timeAlive = 0;
-            dropUpgradeObject();
+            // dropUpgradeObject();
             StartCoroutine(respawn());
+        }
+    }
+
+    void transferUpgradeObject(PlayerMovement myKiller)
+    {
+        if(upgradeObject != null)
+        {
+            HoldToWinItem upgrader = GetComponent<HoldToWinItem>();
+            upgrader.currentHolderTransform = null;
+            myKiller.pickUpUpgrader(upgrader);
+            upgradeObject = null;
         }
     }
 
@@ -353,7 +361,7 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    void pickUpUpgrader(HoldToWinItem upgrader)
+    public void pickUpUpgrader(HoldToWinItem upgrader)
     {
         if(upgrader.currentHolderTransform != null) { return; } // if someone's already holding this
         upgradeObject = upgrader.transform;

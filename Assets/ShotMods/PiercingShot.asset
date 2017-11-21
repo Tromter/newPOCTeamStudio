@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Name: PiercingShot
   m_EditorClassIdentifier: 
   maxUpgradeLevel: 10
-  currentLevel: 1
+  currentLevel: 10
   timeToLevelRatio: 4
   bulletLifeTimes: 2
-  bulletSpeeds: 30
+  bulletSpeeds: 60
   shotCooldown: 0.7
   bulletScale: 2
   perLevelSizeBonus: 0.2
