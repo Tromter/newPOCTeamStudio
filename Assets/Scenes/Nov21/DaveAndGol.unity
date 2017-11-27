@@ -562,7 +562,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 183544702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -199.81274, z: -1}
+  m_LocalPosition: {x: 0, y: -225.00002, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1601704403}
@@ -2427,6 +2427,12 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &954162796 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114658805319711308, guid: 91e5f8a3457e5af428325ad163f5513b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1766178794}
+  m_Script: {fileID: 11500000, guid: 2ff72cef1bf23de4693f65148ee547eb, type: 3}
 --- !u!1 &969460299
 GameObject:
   m_ObjectHideFlags: 0
@@ -3573,8 +3579,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1594414947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 267, y: 167, z: 0}
-  m_LocalScale: {x: 0.6675, y: 0.6675, z: 0.6675}
+  m_LocalPosition: {x: 264, y: 148.5, z: 0}
+  m_LocalScale: {x: 0.66, y: 0.66, z: 0.66}
   m_Children:
   - {fileID: 333108877}
   - {fileID: 183544703}
@@ -4333,7 +4339,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4146472188254632, guid: 91e5f8a3457e5af428325ad163f5513b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -19.7
       objectReference: {fileID: 0}
     - target: {fileID: 4146472188254632, guid: 91e5f8a3457e5af428325ad163f5513b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4367,6 +4373,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114177608118846816, guid: 91e5f8a3457e5af428325ad163f5513b,
+        type: 2}
+      propertyPath: myInput
+      value: 
+      objectReference: {fileID: 954162796}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91e5f8a3457e5af428325ad163f5513b, type: 2}
   m_IsPrefabParent: 0
@@ -5193,10 +5204,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2113126868}
   - component: {fileID: 2113126867}
-  - component: {fileID: 2113126866}
   - component: {fileID: 2113126865}
   - component: {fileID: 2113126864}
   - component: {fileID: 2113126863}
+  - component: {fileID: 2113126866}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged

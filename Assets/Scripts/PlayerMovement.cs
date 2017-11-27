@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour {
         timeAlive = 0;
         weapExp = 0;
         myPlayerGun.currentShotMod = weap;
-        myScore.color = mySR.color;
+        // myScore.color = mySR.color;
 	}
 	
 	// Update is called once per frame
