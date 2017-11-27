@@ -24,7 +24,10 @@ public class PlayerMovement : MonoBehaviour {
     public bool strafeControls = false;
 
     public float timeAlive;
+    public float currentLife;
+    public float longestLifeSpan;
     public int killCount;
+
     public int currentLifeKillCount;
     public int totalDeaths;
     public float respawnTime;
@@ -40,6 +43,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	private SpaceGun myPlayerGun;
 	[SerializeField] public ShotModifier weap;
+    public float heldWeaponTime;
 	public SubModifier sub;
     public float weapExp;
 
@@ -64,6 +68,11 @@ public class PlayerMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         health = 1;
+        heldWeaponTime = 0f;
+        killCount = 0;
+        longestLifeSpan = 0;
+        currentLife = 0;
+
 		myCanvasManager = this.GetComponentInChildren<PlayerCanvasManager>();
         myInput = this.GetComponent<PlayerInput>();
 		myPlayerGun = this.GetComponent<SpaceGun>();
@@ -93,7 +102,7 @@ public class PlayerMovement : MonoBehaviour {
             processShooting();
         }
         int currLevel = 0;
-        //myScore.text = myPlayerGun.currentShotMod.name + " Lv." + myPlayerGun.currentShotMod.GetLevel(weapExp) + " Kills: " + killCount;
+        currentLife += Time.deltaTime;
 	}
 
     void processShooting()
@@ -214,6 +223,9 @@ public class PlayerMovement : MonoBehaviour {
             }
             int weapLevel = weap.GetLevel(weapExp);
             totalDeaths++;
+
+            if(currentLife > longestLifeSpan) { longestLifeSpan = currentLife; }
+            currentLife = 0f;
 
 			CamControl.instance.AddShake((float)weapLevel);
 

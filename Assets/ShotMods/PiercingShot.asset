@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d09515bc505bed47985188b4b5af439, type: 3}
   m_Name: PiercingShot
   m_EditorClassIdentifier: 
+  modName: Piercing Gun
   maxUpgradeLevel: 10
   currentLevel: 10
   timeToLevelRatio: 4

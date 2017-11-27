@@ -11,6 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c21e12441f2c04b4ba058f14e365d3d0, type: 3}
   m_Name: DefaultShot
   m_EditorClassIdentifier: 
+  modName: Regular Gun
   maxUpgradeLevel: 10
   currentLevel: 1
   timeToLevelRatio: 4
