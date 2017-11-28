@@ -14,7 +14,6 @@ public class blockmoves : MonoBehaviour {
 	void Update () {
 		//transform.Rotate(Vector3.forward * speed * Time.deltaTime);
 		float sinwave = Mathf.Cos (Time.frameCount / (distanceToMove * 100)) * distanceToMove;
-		Debug.Log (sinwave);
 		transform.Translate (Vector3.up * speed * sinwave);
 	}
 }

@@ -41,7 +41,7 @@ public class PopupScript : MonoBehaviour {
 			if (travelTimer > travelDuration) travelTimer = travelDuration;
 
 			if (travelTimer >= travelDuration) {
-				Debug.Log("UDOUGSOGOSGUDGYU");
+//				Debug.Log("UDOUGSOGOSGUDGYU");
 				myText.color = Color.Lerp(textStartingColor, Color.clear, lingerTimer / lingerDuration);
 
 				lingerTimer += Time.deltaTime;

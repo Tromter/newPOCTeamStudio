@@ -54,4 +54,8 @@ public class ShipSpriteManager : MonoBehaviour {
 	void PlayFX(){
 		audio_fx.GetComponent<AudioSource>().Play ();
 	}
+		
+	public int GetPlayerLvl(){
+		return totalPlayerLevel;
+	}
 }
