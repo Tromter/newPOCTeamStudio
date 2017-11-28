@@ -18,11 +18,17 @@ public class subTeleMod : SubModifier {
 		new_pos = xXx_pla_Move_xXx.transform.position + xXx_pla_Move_xXx.transform.up * tele_dist;
 		SpriteRenderer active = xXx_pla_Move_xXx.GetComponent<SpriteRenderer> ();
 		BoxCollider2D active2 = xXx_pla_Move_xXx.GetComponent<BoxCollider2D> ();
+		TrailRenderer active3 = xXx_pla_Move_xXx.GetComponentInChildren<TrailRenderer> ();
+		SpriteRenderer active4 = xXx_pla_Move_xXx.GetComponent<PlayerAimRenderer> ().myAim.GetComponent<SpriteRenderer> ();
+		active4.enabled = false;
+		active3.enabled = false;
 		active.enabled = false;
 		active2.enabled = false;
 		xXx_pla_Move_xXx.transform.position = new_pos;
 		yield return new WaitForSeconds (0.2f);
+		active4.enabled = true;
 		active.enabled = true;
+		active3.enabled = true;
 		active2.enabled = true;
 	}
 
