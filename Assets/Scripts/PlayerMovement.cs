@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour {
     public float longestLifeSpan;
     public int killCount;
 
+    public Dictionary<string, float> favWeapons = new Dictionary<string, float>();
+
     public int currentLifeKillCount;
     public int totalDeaths;
     public float respawnTime;
@@ -84,16 +86,15 @@ public class PlayerMovement : MonoBehaviour {
         timeAlive = 0;
         weapExp = 0;
         myPlayerGun.currentShotMod = weap;
-//        myScore.color = mySR.color;
-	}
+        favWeapons.Add(myPlayerGun.currentShotMod.modName, 0f);
+        //        myScore.color = mySR.color;
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		// float shooting = Input.GetAxisRaw(inputControllerFire);
-        if (!dead)
-        {
-            if(upgradeObject != null)
-            {
+        if (!dead) {
+            if(upgradeObject != null) {
                 timeAlive += Time.deltaTime * (currentLifeKillCount + 1);
                 weapExp += Time.deltaTime * upgradeFactor;
             }
@@ -103,6 +104,13 @@ public class PlayerMovement : MonoBehaviour {
         }
         int currLevel = 0;
         currentLife += Time.deltaTime;
+        if(currentLife > longestLifeSpan) { longestLifeSpan = currentLife; }
+        if (favWeapons.ContainsKey(myPlayerGun.currentShotMod.modName)) {
+            favWeapons[myPlayerGun.currentShotMod.modName] += Time.deltaTime;
+        }
+        else {
+            favWeapons.Add(myPlayerGun.currentShotMod.modName, 0f);
+        }
 	}
 
     void processShooting()
@@ -223,8 +231,7 @@ public class PlayerMovement : MonoBehaviour {
             }
             int weapLevel = weap.GetLevel(weapExp);
             totalDeaths++;
-
-            if(currentLife > longestLifeSpan) { longestLifeSpan = currentLife; }
+            
             currentLife = 0f;
 
 			CamControl.instance.AddShake((float)weapLevel);
@@ -374,7 +381,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
 	void OnCollisionEnter2D(Collision2D other){
-		Debug.Log ("NO!");
+		// Debug.Log ("NO!");
 //		int levelconsider = other.GetComponent<ShipSpriteManager> ().GetPlayerLvl ();
 //		int mylevel = this.GetComponent<ShipSpriteManager> ().GetPlayerLvl ();
 		if(sub.name == "SubDashMod" && subActioning){

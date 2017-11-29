@@ -11,8 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06fd3ed8d07cbb945a8e4cae083edd6f, type: 3}
   m_Name: SprayShot
   m_EditorClassIdentifier: 
+  modName: Machine Gun
   maxUpgradeLevel: 10
-  currentLevel: 10
+  currentLevel: 1
   timeToLevelRatio: 4
   bulletLifeTimes: 3
   bulletSpeeds: 45

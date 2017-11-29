@@ -20,11 +20,12 @@ MonoBehaviour:
   - {fileID: 0}
   m_playerScores:
   - 0
+  - 12
+  - 18
   - 0
-  - 0
-  - 0
-  m_scoreToWin: 150
+  m_scoreToWin: 10
   m_gamewinner: 1
+  winField: {fileID: 0}
   powerCorePrefab: {fileID: 1593583474526916, guid: ba1ab15a1b10aa647a0a0c607c0b7e66,
     type: 2}
   powerCoreInitialPos: {x: 0, y: 0}

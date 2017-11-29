@@ -11,8 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620a23ab1c24d42b0b7f84112f8972a6, type: 3}
   m_Name: SinShot
   m_EditorClassIdentifier: 
+  modName: Sinwave Gun
   maxUpgradeLevel: 10
-  currentLevel: 10
+  currentLevel: 1
   timeToLevelRatio: 4
   bulletLifeTimes: 1.5
   bulletSpeeds: 30

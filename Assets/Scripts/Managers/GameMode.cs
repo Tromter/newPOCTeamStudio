@@ -11,6 +11,8 @@ public class GameMode : ScriptableObject {
 	public float m_scoreToWin;
 	public int m_gamewinner = 0;
 
+    public GameObject winField;
+
 	public virtual void Initialize(GameManager gm){
 		myGM = gm;
 		m_gameState = 0;
@@ -47,9 +49,17 @@ public class GameMode : ScriptableObject {
 	}
 
 	public virtual void Endphase(){
-		//do something
+        //do something
+        winField = GameObject.Find("WinBGImage");
+        if (winField && winField.activeInHierarchy) {
+            return;
+        }
 		WinManager.instance.DisplayWinmessage(m_gamewinner);
 	}
+
+    void OnApplicationQuit() {
+        winField = null;
+    }
 
 	public virtual void AddScoreDamage(int playerNum, PlayerMovement killedPlayer){ //actual number, not the index in the list
 		
