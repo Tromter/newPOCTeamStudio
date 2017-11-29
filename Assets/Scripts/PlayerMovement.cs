@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour {
         timeAlive = 0;
         weapExp = 0;
         myPlayerGun.currentShotMod = weap;
-        // myScore.color = mySR.color;
+//        myScore.color = mySR.color;
 	}
 	
 	// Update is called once per frame
@@ -373,7 +373,39 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    public void pickUpUpgrader(HoldToWinItem upgrader)
+	void OnCollisionEnter2D(Collision2D other){
+		Debug.Log ("NO!");
+//		int levelconsider = other.GetComponent<ShipSpriteManager> ().GetPlayerLvl ();
+//		int mylevel = this.GetComponent<ShipSpriteManager> ().GetPlayerLvl ();
+		if(sub.name == "SubDashMod" && subActioning){
+			if(other.collider.tag == "Player"){
+				other.collider.GetComponent<PlayerMovement>().TakeDamage (playerNumber); 
+//				if(levelconsider == 1)
+//				{
+//					other.GetComponent<PlayerMovement> ().Die (playerNumber);
+//				}
+//				else if(levelconsider == mylevel){
+//					other.GetComponent<PlayerMovement>().TakeDamage (playerNumber); 
+//				}
+//				else if(levelconsider > 1 && mylevel > levelconsider){
+//					other.GetComponent<PlayerMovement>().TakeDamage (playerNumber);
+//					other.GetComponent<PlayerMovement>().TakeDamage (playerNumber);
+//				}
+//				else{
+//					for(int i = 0; i<mylevel; i++){
+//						other.GetComponent<PlayerMovement> ().TakeDamage (playerNumber);
+//					}
+//					if(other.GetComponent<PlayerMovement> ().dead == false){
+//						other.GetComponent<PlayerMovement> ().TakeDamage (playerNumber);
+//					}
+//					this.Die (other.GetComponent<PlayerMovement>().playerNumber);
+//				}
+
+			}
+		}
+	}
+
+    void pickUpUpgrader(HoldToWinItem upgrader)
     {
         if(upgrader.currentHolderTransform != null) { return; } // if someone's already holding this
         upgradeObject = upgrader.transform;
