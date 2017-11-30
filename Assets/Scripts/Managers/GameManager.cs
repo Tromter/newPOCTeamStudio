@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour {
     #endregion
 
     #endregion
-
+	bool setupDone = false;
     #region Start and Update
     // Use this for initialization
     void Awake () {
@@ -44,36 +44,44 @@ public class GameManager : MonoBehaviour {
         if (gameRunning)
         {
 			currentGameMode.Initialize(this);
-            for(int i = 0; i < playerCount; i++)
-            {
-                if(i >= playerSpawns.Length) { break; }
-                PlayerMovement newPlayer = Instantiate(playerPrefab, playerSpawns[i].position, Quaternion.identity);
-                players.Add(newPlayer);
-                newPlayer.playerNumber = players.Count;
-				ParticleOverlord.instance.SpawnParticle(playerSpawns[i].position, "LevelUpParticle");
-                /*
+            
+        }
+	}
+
+	public void DoSetup(){
+		for(int i = 0; i < playerCount; i++)
+		{
+			if(i >= playerSpawns.Length) { break; }
+			PlayerMovement newPlayer = Instantiate(playerPrefab, playerSpawns[i].position, Quaternion.identity);
+			players.Add(newPlayer);
+			newPlayer.playerNumber = players.Count;
+			ParticleOverlord.instance.SpawnParticle(playerSpawns[i].position, "LevelUpParticle");
+			/*
                 newPlayer.inputControllerHorizontal = "Horizontal_P" + newPlayer.playerNumber;
                 newPlayer.inputControllerVertical = "Vertical_P" + newPlayer.playerNumber;
                 newPlayer.inputControllerHorizontalLook = "HorizontalLook_P" + newPlayer.playerNumber;
                 newPlayer.inputControllerVerticalLook = "VerticalLook_P" + newPlayer.playerNumber;
                 newPlayer.inputControllerFire = "Shoot_P" + newPlayer.playerNumber;
                 */
-                newPlayer.transform.name = "Player " + newPlayer.playerNumber;
-                PlayerInput newPlayerInput = newPlayer.gameObject.GetComponent<PlayerInput>();
-                newPlayerInput.playerNum = newPlayer.playerNumber - 1;
-                // newPlayer.GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.3f, 0.9f), Random.Range(0.3f, 0.9f), Random.Range(0.3f, 0.9f));
-                newPlayer.GetComponent<SpriteRenderer>().color = playerColors[i];
-//                GameObject newScoreCard = Instantiate(playerScoreCard);
-//                newScoreCard.transform.SetParent(scoreBoard.transform, false);
-//                newPlayer.myScore = newScoreCard.GetComponent<Text>();
-//				newPlayer.myScore.text = "Lv.1 Score 0";
-            }
-            weapSpawnRechargeStart = Time.time;
-        }
+			newPlayer.transform.name = "Player " + newPlayer.playerNumber;
+			PlayerInput newPlayerInput = newPlayer.gameObject.GetComponent<PlayerInput>();
+			newPlayerInput.playerNum = newPlayer.playerNumber - 1;
+			// newPlayer.GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.3f, 0.9f), Random.Range(0.3f, 0.9f), Random.Range(0.3f, 0.9f));
+			newPlayer.GetComponent<SpriteRenderer>().color = playerColors[i];
+			//                GameObject newScoreCard = Instantiate(playerScoreCard);
+			//                newScoreCard.transform.SetParent(scoreBoard.transform, false);
+			//                newPlayer.myScore = newScoreCard.GetComponent<Text>();
+			//				newPlayer.myScore.text = "Lv.1 Score 0";
+		}
+		weapSpawnRechargeStart = Time.time;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (!setupDone && currentGameMode.gameState > 0){
+			DoSetup();
+			setupDone = true;
+		}
 		currentGameMode.RunGameMode();
         if (Input.GetKeyDown(KeyCode.R)) { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
         if(gameRunning)
