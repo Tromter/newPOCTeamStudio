@@ -491,11 +491,11 @@ MonoBehaviour:
   - slideTransform: {fileID: 224982413674584840}
     slideStayDuration: 1
   - slideTransform: {fileID: 224581971819946836}
-    slideStayDuration: 2
+    slideStayDuration: 1.5
   - slideTransform: {fileID: 224152361296421164}
-    slideStayDuration: 2
+    slideStayDuration: 1.5
   - slideTransform: {fileID: 224067051300923276}
-    slideStayDuration: 2
+    slideStayDuration: 1.5
   slideTransitionLerpSpd: 8
   introBloom: 50
   introJitter: 0.5
