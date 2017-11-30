@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour {
         weapExp = 0;
         myPlayerGun.currentShotMod = weap;
         favWeapons.Add(myPlayerGun.currentShotMod.modName, 0f);
-        //        myScore.color = mySR.color;
+                myScore.color = mySR.color;
     }
 	
 	// Update is called once per frame
