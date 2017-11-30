@@ -3,31 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameMode : ScriptableObject {
+	[HideInInspector]
 	public GameManager myGM;
 
-	[SerializeField] protected int m_gameState;
+	public int gameState;
 	[SerializeField] protected List<PlayerMovement> m_players;
 	[SerializeField] public float[] m_playerScores;
 	public float m_scoreToWin;
 	public int m_gamewinner = 0;
 
+	[HideInInspector]
     public GameObject winField;
+	public GameObject myIntroSeq;
 
 	public virtual void Initialize(GameManager gm){
 		myGM = gm;
-		m_gameState = 0;
+		gameState = 0;
 		m_players = myGM.players;
 		m_playerScores = new float[4];
+		Instantiate(myIntroSeq);
 	}
 
 	public virtual void RunGameMode(){
-		if (m_gameState == 0){
+		if (gameState == 0){
 			StartPhase();
 		}
-		if (m_gameState == 1){
+		if (gameState == 1){
 			MainPhase();
 		}
-		if (m_gameState == 2){
+		if (gameState == 2){
 			Endphase();
 		}
 	}
@@ -36,14 +40,16 @@ public class GameMode : ScriptableObject {
 		for (int i = 0; i < m_playerScores.Length; i++) {
 			m_playerScores[i] = 0f;
 		}
-        m_gameState = 1;
+		if (myIntroSeq == null)
+      	  gameState = 1;
+		//otherwise wait for it to tell you
 	}
 
 	public virtual void MainPhase(){
 		for (int i = 0; i < m_playerScores.Length; i++) {
 			if (m_playerScores[i] >= m_scoreToWin){
 				m_gamewinner = i + 1;
-				m_gameState = 2;
+				gameState = 2;
 			}
 		}
 	}
