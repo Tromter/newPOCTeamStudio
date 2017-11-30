@@ -14,10 +14,15 @@ public class PowerCoreGameMode : GameMode {
 
 	public float coreUpgradeRate;
 
+	bool spawnedThing = false;
 	public override void StartPhase ()
 	{
 		base.StartPhase ();
-		GameObject newCore = Instantiate(powerCorePrefab, (Vector3)powerCoreInitialPos, Quaternion.identity);
+		if (!spawnedThing){
+			GameObject newCore = Instantiate(powerCorePrefab, (Vector3)powerCoreInitialPos, Quaternion.identity);
+			spawnedThing = true;
+		}
+
 		//this is where I would set core upgrade rate...IF I HAD ONE
 	}
 
