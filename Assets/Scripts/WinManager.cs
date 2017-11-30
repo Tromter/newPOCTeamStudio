@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -52,14 +53,31 @@ public class WinManager : MonoBehaviour {
 	public void DisplayWinmessage(int playerInt){
 		//Debug.Log("Player " + playerInt + " has won via " + method);
 		WinText.transform.parent.gameObject.SetActive(true);
+        Transform statsSection = WinText.transform.parent.Find("Stats");
+        Text[] stats = statsSection.GetComponentsInChildren<Text>();
+        for(int i = 0; i < stats.Length; i++)
+        {
+            PlayerMovement playerData = GameManager.Instance.players[i];
+            stats[i].text = "Total Kills: " + playerData.killCount;
+            stats[i].text += "\nTotal Deaths: " + playerData.totalDeaths;
+            stats[i].text += "\nLongest Life: " + Mathf.Round(playerData.longestLifeSpan) + " seconds";
+            string favWeapon = playerData.favWeapons.Keys.Max();
+            float timeHeld = playerData.favWeapons[favWeapon];
+            stats[i].text += "\nFavorite Weapon: " + favWeapon + "(" + Mathf.Round(timeHeld) + "s)";
+            stats[i].color = playerData.GetComponent<SpriteRenderer>().color;
+
+        }
+        /*
 		if (playerInt == 1)
-			WinText.text = "Congrutalations RED! You're the best at killing! Press R to restart and let your lesser pals have another shot.";
+			WinText.text = "Congratulations RED! You're the best at killing! Press R to restart and let your lesser pals have another shot.";
 		else if (playerInt == 2)
-			WinText.text = "Congrutalations BLUE! You're the best at killing! Press R to restart and let your lesser pals have another shot.";
+			WinText.text = "Congratulations BLUE! You're the best at killing! Press R to restart and let your lesser pals have another shot.";
 		else if (playerInt == 3)
-			WinText.text = "Congrutalations GREEN! You're the best at killing! Press R to restart and let your lesser pals have another shot.";
+			WinText.text = "Congratulations GREEN! You're the best at killing! Press R to restart and let your lesser pals have another shot.";
 		else if (playerInt == 4)
-			WinText.text = "Congrutalations YELLOW! You're the best at killing! Press R to restart and let your lesser pals have another shot.";
-		
+			WinText.text = "Congratulations YELLOW! You're the best at killing! Press R to restart and let your lesser pals have another shot.";
+		*/
+        WinText.text = "Player " + playerInt + " wins!";
+        WinText.color = GameManager.Instance.playerColors[playerInt - 1];
 	}
 }

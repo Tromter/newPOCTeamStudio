@@ -11,11 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07eb645bfbf324cd2a8a37b440b43da7, type: 3}
   m_Name: TriangleShot
   m_EditorClassIdentifier: 
+  modName: Shotgun
   maxUpgradeLevel: 10
-  currentLevel: 10
+  currentLevel: 1
   timeToLevelRatio: 4
   bulletLifeTimes: 2
-  bulletSpeeds: 20
+  bulletSpeeds: 50
   shotCooldown: 0.7
   bulletScale: 0.4
   perLevelSizeBonus: 0.08

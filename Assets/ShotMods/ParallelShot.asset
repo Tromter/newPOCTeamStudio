@@ -11,11 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab3b096856fa7d40aea7e613bc1ab0b, type: 3}
   m_Name: ParallelShot
   m_EditorClassIdentifier: 
+  modName: Parallel Gun
   maxUpgradeLevel: 10
-  currentLevel: 1
+  currentLevel: 10
   timeToLevelRatio: 4
   bulletLifeTimes: 4
-  bulletSpeeds: 20
+  bulletSpeeds: 36
   shotCooldown: 1.1
   bulletScale: 0.6
   perLevelSizeBonus: 0.1
