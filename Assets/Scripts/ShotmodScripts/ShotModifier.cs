@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShotModifier : ScriptableObject {
 
+    public string modName;
+
 	public int maxUpgradeLevel = 0; //0 is infinity
 	public int currentLevel = 1;
 	public float timeToLevelRatio = 2f;
