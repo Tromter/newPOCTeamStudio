@@ -1044,7 +1044,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 333108876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 230, z: 0}
+  m_LocalPosition: {x: 0, y: 206, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1594414951}
@@ -1052,7 +1052,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 230}
+  m_AnchoredPosition: {x: 0, y: 206}
   m_SizeDelta: {x: 800, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &333108878
@@ -1295,6 +1295,11 @@ MonoBehaviour:
   currIntensity: 0
   shakeDuration: 0.2
   shakeReturn: 0.1
+  baseBloom: 0
+  bloomBurstDur: 0
+  minBloomBurst: 0
+  maxBloomBurst: 0
+  bloomIntensityCap: 0
 --- !u!114 &472172762
 MonoBehaviour:
   m_ObjectHideFlags: 0

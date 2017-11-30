@@ -49,7 +49,14 @@ public class DavidsAndGoliathGameMode : GameMode {
 
     public override void AddScoreKill (int playerNum, PlayerMovement killedPlayer)
 	{
-        if (playerNum != currentGoliath && killedPlayer.playerNumber != currentGoliath) { //david on david
+        Debug.Log("Murder!");
+        if (currentGoliath == 0)
+        { //first kill
+            currentGoliath = playerNum;
+            m_players[playerNum - 1].weapExp = 10000f;
+            m_playerScores[playerNum - 1] += davidKillPoints * killModifier;
+            m_players[playerNum - 1].myCanvasManager.PopupMessage("IT BEGINS", .25f, 1f, 1f, 1f);
+        } else if (playerNum != currentGoliath && killedPlayer.playerNumber != currentGoliath) { //david on david
             m_playerScores[playerNum - 1] += davidKillPoints * killModifier;
             //m_players [playerNum - 1].weapExp += expPerDavidOnDavid;
             killedPlayer.weapExp = 0f;
@@ -58,12 +65,7 @@ public class DavidsAndGoliathGameMode : GameMode {
             m_playerScores[playerNum - 1] += goliathKillDavidPoints * killModifier;
             killedPlayer.weapExp = 0f;
             m_players[playerNum - 1].myCanvasManager.PopupMessage("+" + goliathKillDavidPoints * killModifier, .5f, .25f, 1f, 1.2f);
-		} else if (currentGoliath == 0) { //first kill
-			currentGoliath = playerNum;
-			m_players [playerNum - 1].weapExp = 10000f;
-			m_playerScores [playerNum - 1] += davidKillPoints * killModifier;
-			m_players[playerNum - 1].myCanvasManager.PopupMessage("IT BEGINS", .25f, 1f, 1f, 1f); 
-		}
+		} 
 		else { //david kills goliath
 			m_playerScores[playerNum - 1] += goliathKillPoints * killModifier;
 			currentGoliath = playerNum;

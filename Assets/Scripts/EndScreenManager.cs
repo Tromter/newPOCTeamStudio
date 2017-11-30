@@ -46,7 +46,7 @@ public class EndScreenManager : MonoBehaviour {
                 statPage.Find("Ready").gameObject.SetActive(true);
                 players[i].voteType = 1;
             }
-            // Whenever gabe gives me the god damn player input changes!
+            if (players[i].playerInput.circlePressed) { StartCoroutine(dontBeginAgain()); } // go back to lobby like the filthy casual you are
             if(players[i].voteType != 1) { readyUp = false; }
         }
         if (readyUp) { StartCoroutine(beginAgain());/*SceneManager.LoadScene(SceneManager.GetActiveScene().name);*/ }
