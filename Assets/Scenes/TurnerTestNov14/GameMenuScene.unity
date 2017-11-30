@@ -1147,9 +1147,9 @@ MonoBehaviour:
   chosenSubmodifier: {fileID: 0}
   playerID: 2
   controllerAvail: 0
-  lockedIn: 1
+  lockedIn: 0
   notLockedColor: {r: 0, g: 1, b: 0.006896496, a: 0.566}
-  lockedColor: {r: 0, g: 1, b: 0.007843138, a: 0.5647059}
+  lockedColor: {r: 0, g: 1, b: 0.007843138, a: 1}
 --- !u!114 &349556882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1979,9 +1979,9 @@ MonoBehaviour:
   chosenSubmodifier: {fileID: 0}
   playerID: 4
   controllerAvail: 0
-  lockedIn: 1
+  lockedIn: 0
   notLockedColor: {r: 1, g: 0.10344827, b: 0, a: 0.566}
-  lockedColor: {r: 1, g: 0.101960786, b: 0, a: 0.5647059}
+  lockedColor: {r: 1, g: 0.101960786, b: 0, a: 1}
 --- !u!114 &625133017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7346,7 +7346,7 @@ MonoBehaviour:
   chosenSubmodifier: {fileID: 0}
   playerID: 1
   controllerAvail: 0
-  lockedIn: 1
+  lockedIn: 0
   notLockedColor: {r: 0, g: 0.83448267, b: 1, a: 0.566}
   lockedColor: {r: 0, g: 0.8352941, b: 1, a: 1}
 --- !u!114 &1559207708
@@ -7769,9 +7769,9 @@ MonoBehaviour:
   chosenSubmodifier: {fileID: 0}
   playerID: 3
   controllerAvail: 0
-  lockedIn: 1
+  lockedIn: 0
   notLockedColor: {r: 1, g: 0.93103456, b: 0, a: 0.566}
-  lockedColor: {r: 1, g: 0.92941177, b: 0, a: 0.5647059}
+  lockedColor: {r: 1, g: 0.92941177, b: 0, a: 1}
 --- !u!114 &1587070053
 MonoBehaviour:
   m_ObjectHideFlags: 0
