@@ -45,11 +45,11 @@ public class DavidsAndGoliathGameMode : GameMode {
         else { // david on goliath
             m_playerScores[playerNum - 1] += goliathKillPoints;
         }
+        m_players[playerNum - 1].myScore.text = "P" + playerNum + " Score: " + m_playerScores[playerNum - 1];
     }
 
     public override void AddScoreKill (int playerNum, PlayerMovement killedPlayer)
 	{
-        Debug.Log("Murder!");
         if (currentGoliath == 0)
         { //first kill
             currentGoliath = playerNum;
@@ -73,6 +73,7 @@ public class DavidsAndGoliathGameMode : GameMode {
 			killedPlayer.weapExp = 0f;
 			m_players[playerNum - 1].myCanvasManager.PopupMessage("GOLIATHIZED", .25f, 1f, 1f, 1f); 
 		}
+        m_players[playerNum - 1].myScore.text = "P" + playerNum + " Score: " + m_playerScores[playerNum - 1];
 	}
 }
 
