@@ -74,6 +74,13 @@ public class GameManager : MonoBehaviour {
 							newPlayer.myScore.text = "P" + newPlayer.playerNumber + " Score: 0";
 		}
 		weapSpawnRechargeStart = Time.time;
+
+		if (GameObject.Find("DataTransfer") != null){
+			FromMenuData sumData = GameObject.Find("DataTransfer").GetComponent<FromMenuData>();
+			for (int i = 0; i < 4; i++) {
+				players[i].sub = sumData.playerSubs[i];
+			}
+		}
 	}
 	
 	// Update is called once per frame

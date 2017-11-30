@@ -247,11 +247,11 @@ MonoBehaviour:
   - slideTransform: {fileID: 224567708595434356}
     slideStayDuration: 1
   - slideTransform: {fileID: 224750911246085420}
-    slideStayDuration: 2
+    slideStayDuration: 1.5
   - slideTransform: {fileID: 224822071549580236}
-    slideStayDuration: 2
+    slideStayDuration: 1.5
   - slideTransform: {fileID: 224205266972024150}
-    slideStayDuration: 2
+    slideStayDuration: 1.5
   slideTransitionLerpSpd: 8
   introBloom: 50
   introJitter: 0.5
