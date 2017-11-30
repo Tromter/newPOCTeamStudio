@@ -12,12 +12,13 @@ public class PlayerInput : MonoBehaviour {
 	public bool shootButtonHeld = false;
 	public bool dashButtonPressed = false;
 	public bool weaponSwapButtonPressed = false;
+	public bool circlePressed = false;
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		var inputDevice = (InputManager.Devices.Count > playerNum) ? InputManager.Devices[playerNum] : null;
@@ -34,6 +35,8 @@ public class PlayerInput : MonoBehaviour {
 			dashButtonPressed = inputDevice.LeftBumper.WasPressed;
 
 			weaponSwapButtonPressed = inputDevice.Action1.WasPressed;
+
+			circlePressed = inputDevice.Action2.WasPressed;
 		}
 	}
 }

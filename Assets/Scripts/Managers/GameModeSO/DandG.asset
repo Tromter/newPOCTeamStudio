@@ -12,20 +12,17 @@ MonoBehaviour:
   m_Name: DandG
   m_EditorClassIdentifier: 
   myGM: {fileID: 0}
-  m_gameState: 2
-  m_players:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  gameState: 0
+  m_players: []
   m_playerScores:
   - 0
-  - 152
-  - 64
+  - 0
+  - 0
   - 0
   m_scoreToWin: 150
   m_gamewinner: 2
   winField: {fileID: 0}
+  myIntroSeq: {fileID: 1448898301354294, guid: 6a02264ac61748b4db00c9754729e3de, type: 2}
   davidKillPoints: 2
   goliathKillPoints: 6
   goliathKillDavidPoints: 4
