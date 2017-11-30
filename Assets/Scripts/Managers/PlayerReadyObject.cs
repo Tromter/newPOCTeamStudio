@@ -57,7 +57,7 @@ public class PlayerReadyObject : MonoBehaviour {
 
 			upHit = InputManager.Devices[playerID - 1].DPadUp.WasPressed;
 			downHit = InputManager.Devices[playerID - 1].DPadDown.WasPressed;
-			submitHit = InputManager.Devices[playerID - 1].Action1.WasPressed;
+			submitHit = myInput.weaponSwapButtonPressed;
 		}
 		else {
 			controllerAvail = false;
