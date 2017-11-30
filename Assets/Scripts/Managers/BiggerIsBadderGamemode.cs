@@ -47,7 +47,7 @@ public class BiggerIsBadderGamemode : GameMode {
 		}
 	}
 
-	public override void Addscore (int playerNum, PlayerMovement killedPlayer)
+	public override void AddScoreDamage (int playerNum, PlayerMovement killedPlayer)
 	{
 		if (killedPlayer.playerNumber != currentSmallGuy && currentSmallGuy > 0) {
 			m_playerScores [killedPlayer.playerNumber - 1] -= bigGuyKillPenalty;
@@ -64,4 +64,25 @@ public class BiggerIsBadderGamemode : GameMode {
 			killedPlayer.weapExp = bigStartExp;
 		}
 	}
+
+    public override void AddScoreKill(int playerNum, PlayerMovement killedPlayer)
+    {
+        if (killedPlayer.playerNumber != currentSmallGuy && currentSmallGuy > 0)
+        {
+            m_playerScores[killedPlayer.playerNumber - 1] -= bigGuyKillPenalty;
+            if (playerNum != currentSmallGuy)
+                m_players[playerNum - 1].weapExp += bigOnBigExp;
+            killedPlayer.weapExp = bigStartExp;
+        }
+        else if (currentSmallGuy == 0)
+        {
+            currentSmallGuy = playerNum;
+        }
+        else {
+            m_playerScores[playerNum - 1] += smallGuyKillBonus;
+            currentSmallGuy = playerNum;
+            m_players[playerNum - 1].weapExp = 0f;
+            killedPlayer.weapExp = bigStartExp;
+        }
+    }
 }

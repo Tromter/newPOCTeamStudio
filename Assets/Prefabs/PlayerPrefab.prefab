@@ -480,8 +480,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a4d325708443e4ca52cb7d076f8e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 11
-  normalSpeed: 11
+  speed: 20
+  normalSpeed: 20
   playerNumber: 1
   max_health: 1
   health: 0

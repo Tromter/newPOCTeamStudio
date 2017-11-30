@@ -8,6 +8,9 @@ public class DavidsAndGoliathGameMode : GameMode {
 
 	public float davidKillPoints;
 	public float goliathKillPoints;
+    public float goliathKillDavidPoints;
+
+    public int killModifier;
 
 	public int currentGoliath = 0;
 
@@ -28,21 +31,41 @@ public class DavidsAndGoliathGameMode : GameMode {
 		}
 	}
 
-	public override void Addscore (int playerNum, PlayerMovement killedPlayer)
+    public override void AddScoreDamage(int playerNum, PlayerMovement killedPlayer)
+    {
+        if(playerNum != currentGoliath && killedPlayer.playerNumber != currentGoliath) { // david on david
+            m_playerScores[playerNum - 1] += davidKillPoints;
+        }
+        else if(playerNum == currentGoliath) { // goliath on david
+            m_playerScores[playerNum - 1] += goliathKillDavidPoints;
+        }
+        else if(currentGoliath == 0) { // first damage
+            m_playerScores[playerNum - 1] += davidKillPoints;
+        }
+        else { // david on goliath
+            m_playerScores[playerNum - 1] += goliathKillPoints;
+        }
+    }
+
+    public override void AddScoreKill (int playerNum, PlayerMovement killedPlayer)
 	{
-		if (killedPlayer.playerNumber != currentGoliath && currentGoliath != 0) { //david on david or goliath on david
-			m_playerScores [playerNum - 1] += davidKillPoints;
-			//m_players [playerNum - 1].weapExp += expPerDavidOnDavid;
-			killedPlayer.weapExp = 0f;
-			m_players[playerNum - 1].myCanvasManager.PopupMessage("+" + davidKillPoints, .5f, .25f, 1f, 1.2f); 
+        if (playerNum != currentGoliath && killedPlayer.playerNumber != currentGoliath) { //david on david
+            m_playerScores[playerNum - 1] += davidKillPoints * killModifier;
+            //m_players [playerNum - 1].weapExp += expPerDavidOnDavid;
+            killedPlayer.weapExp = 0f;
+            m_players[playerNum - 1].myCanvasManager.PopupMessage("+" + davidKillPoints * killModifier, .5f, .25f, 1f, 1.2f);
+        } else if(playerNum == currentGoliath) { // if goliath killed david
+            m_playerScores[playerNum - 1] += goliathKillDavidPoints * killModifier;
+            killedPlayer.weapExp = 0f;
+            m_players[playerNum - 1].myCanvasManager.PopupMessage("+" + goliathKillDavidPoints * killModifier, .5f, .25f, 1f, 1.2f);
 		} else if (currentGoliath == 0) { //first kill
 			currentGoliath = playerNum;
 			m_players [playerNum - 1].weapExp = 10000f;
-			m_playerScores [playerNum - 1] += davidKillPoints;
+			m_playerScores [playerNum - 1] += davidKillPoints * killModifier;
 			m_players[playerNum - 1].myCanvasManager.PopupMessage("IT BEGINS", .25f, 1f, 1f, 1f); 
 		}
 		else { //david kills goliath
-			m_playerScores[playerNum - 1] += goliathKillPoints;
+			m_playerScores[playerNum - 1] += goliathKillPoints * killModifier;
 			currentGoliath = playerNum;
 			m_players [playerNum - 1].weapExp = 10000f;
 			killedPlayer.weapExp = 0f;

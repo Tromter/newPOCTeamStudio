@@ -24,7 +24,12 @@ public class PlayerMovement : MonoBehaviour {
     public bool strafeControls = false;
 
     public float timeAlive;
+    public float currentLife;
+    public float longestLifeSpan;
     public int killCount;
+
+    public Dictionary<string, float> favWeapons = new Dictionary<string, float>();
+
     public int currentLifeKillCount;
     public int totalDeaths;
     public float respawnTime;
@@ -40,6 +45,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	private SpaceGun myPlayerGun;
 	[SerializeField] public ShotModifier weap;
+    public float heldWeaponTime;
 	public SubModifier sub;
     public float weapExp;
 
@@ -64,6 +70,11 @@ public class PlayerMovement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         health = 1;
+        heldWeaponTime = 0f;
+        killCount = 0;
+        longestLifeSpan = 0;
+        currentLife = 0;
+
 		myCanvasManager = this.GetComponentInChildren<PlayerCanvasManager>();
         myInput = this.GetComponent<PlayerInput>();
 		myPlayerGun = this.GetComponent<SpaceGun>();
@@ -75,16 +86,15 @@ public class PlayerMovement : MonoBehaviour {
         timeAlive = 0;
         weapExp = 0;
         myPlayerGun.currentShotMod = weap;
-//        myScore.color = mySR.color;
-	}
+        favWeapons.Add(myPlayerGun.currentShotMod.modName, 0f);
+        //        myScore.color = mySR.color;
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		// float shooting = Input.GetAxisRaw(inputControllerFire);
-        if (!dead)
-        {
-            if(upgradeObject != null)
-            {
+        if (!dead) {
+            if(upgradeObject != null) {
                 timeAlive += Time.deltaTime * (currentLifeKillCount + 1);
                 weapExp += Time.deltaTime * upgradeFactor;
             }
@@ -93,7 +103,14 @@ public class PlayerMovement : MonoBehaviour {
             processShooting();
         }
         int currLevel = 0;
-        //myScore.text = myPlayerGun.currentShotMod.name + " Lv." + myPlayerGun.currentShotMod.GetLevel(weapExp) + " Kills: " + killCount;
+        currentLife += Time.deltaTime;
+        if(currentLife > longestLifeSpan) { longestLifeSpan = currentLife; }
+        if (favWeapons.ContainsKey(myPlayerGun.currentShotMod.modName)) {
+            favWeapons[myPlayerGun.currentShotMod.modName] += Time.deltaTime;
+        }
+        else {
+            favWeapons.Add(myPlayerGun.currentShotMod.modName, 0f);
+        }
 	}
 
     void processShooting()
@@ -183,9 +200,14 @@ public class PlayerMovement : MonoBehaviour {
     {
         if(iframesRoutine != null) { return; }
         health--;
-		if (injuryRoutine != null) { StopCoroutine(injuryRoutine); }
+        if (killerID > 0 && killerID <= GameManager.Instance.players.Count) {
+            PlayerMovement myKiller = GameManager.Instance.players[killerID - 1];
+            if(health <= 0) { Die(killerID); return; }
+            else { GameManager.Instance.YellScoreToMode(killerID, this, false); }
+        }
+        if (injuryRoutine != null) { StopCoroutine(injuryRoutine); }
 		injuryRoutine = StartCoroutine(InjuryFlash(.2f));
-        if(health <= 0) { Die(killerID); }
+        // if(health <= 0) { Die(killerID); }
     }
 
     public void HPForKill()
@@ -202,15 +224,15 @@ public class PlayerMovement : MonoBehaviour {
             {
                 PlayerMovement myKiller = GameManager.Instance.players[killerID - 1];
                 myKiller.AddScore();
-                myKiller.HPForKill();
-                GameManager.Instance.YellScoreToMode(killerID, this);
-                //if (killerID == 1)
-                //WinManager.instance.p1Kills += 1;
-                //else if (killerID == 2)
-                //WinManager.instance.p2Kills += 1;
+                transferUpgradeObject(myKiller);
+                // myKiller.HPForKill();
+                GameManager.Instance.YellScoreToMode(killerID, this, true);
+
             }
             int weapLevel = weap.GetLevel(weapExp);
             totalDeaths++;
+            
+            currentLife = 0f;
 
 			CamControl.instance.AddShake((float)weapLevel);
 
@@ -226,17 +248,22 @@ public class PlayerMovement : MonoBehaviour {
 
             weapExp = weap.timeToLevelRatio * weapNewLevel;
             if(weapExp < 0) { weapExp = 0; }
-
-            /*
-            weapExp1 = 0f;
-            weapExp2 = 0f;
-            */
-
-
+            
             currentLifeKillCount = 0;
             timeAlive = 0;
-            dropUpgradeObject();
+            // dropUpgradeObject();
             StartCoroutine(respawn());
+        }
+    }
+
+    void transferUpgradeObject(PlayerMovement myKiller)
+    {
+        if(upgradeObject != null)
+        {
+            HoldToWinItem upgrader = GetComponent<HoldToWinItem>();
+            upgrader.currentHolderTransform = null;
+            myKiller.pickUpUpgrader(upgrader);
+            upgradeObject = null;
         }
     }
 
@@ -354,7 +381,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
 	void OnCollisionEnter2D(Collision2D other){
-		Debug.Log ("NO!");
+		// Debug.Log ("NO!");
 //		int levelconsider = other.GetComponent<ShipSpriteManager> ().GetPlayerLvl ();
 //		int mylevel = this.GetComponent<ShipSpriteManager> ().GetPlayerLvl ();
 		if(sub.name == "SubDashMod" && subActioning){
