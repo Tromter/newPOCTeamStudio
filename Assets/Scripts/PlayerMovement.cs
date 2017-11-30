@@ -235,6 +235,7 @@ public class PlayerMovement : MonoBehaviour {
             currentLife = 0f;
 
 			CamControl.instance.AddShake((float)weapLevel);
+			CamControl.instance.BlastBloom((float)weapLevel);
 
             float kd = (float)killCount / (float)totalDeaths;
             if(kd > 1) { kd = 1; }
