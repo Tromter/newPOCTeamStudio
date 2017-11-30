@@ -9,8 +9,10 @@ public class EndScreenManager : MonoBehaviour {
     public static EndScreenManager instance;
     public List<playerVote> players = new List<playerVote>();
     public Transform stats;
+    public string mainMenuName;
 
-    public Text thingy;
+    public Text countDownThingy;
+    public Text message;
     public Canvas canvas;
     bool reloading = false;
 
@@ -44,7 +46,7 @@ public class EndScreenManager : MonoBehaviour {
                 statPage.Find("Ready").gameObject.SetActive(true);
                 players[i].voteType = 1;
             }
-            // if (players[i].voteType == 2) { /* return to main menu*/ }
+            // Whenever gabe gives me the god damn player input changes!
             if(players[i].voteType != 1) { readyUp = false; }
         }
         if (readyUp) { StartCoroutine(beginAgain());/*SceneManager.LoadScene(SceneManager.GetActiveScene().name);*/ }
@@ -53,12 +55,32 @@ public class EndScreenManager : MonoBehaviour {
     IEnumerator beginAgain()
     {
         reloading = true;
-        Text newThingy = Instantiate(thingy, canvas.transform);
+        Text newMessage = Instantiate(message, canvas.transform);
+        newMessage.text = "Rematch Happening in";
+        yield return new WaitForSeconds(1f);
+        Destroy(newMessage.gameObject);
+        Text newThingy = Instantiate(countDownThingy, canvas.transform);
         for(int i = 0; i < 3; i++)
         {
             newThingy.text = (3 - i).ToString();
             yield return new WaitForSeconds(1f);
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    IEnumerator dontBeginAgain()
+    {
+        reloading = true;
+        Text newMessage = Instantiate(message, canvas.transform);
+        newMessage.text = "Returning to Menu in";
+        yield return new WaitForSeconds(1f);
+        Destroy(newMessage.gameObject);
+        Text newThingy = Instantiate(countDownThingy, canvas.transform);
+        for(int i = 0; i < 3; i++)
+        {
+            newThingy.text = (3 - i).ToString();
+            yield return new WaitForSeconds(1f);
+        }
+        SceneManager.LoadScene(mainMenuName);
     }
 }

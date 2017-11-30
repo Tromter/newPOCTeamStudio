@@ -458,7 +458,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3664d6ab8fb0214f9a32fdbd30db9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 0}
+  stats: {fileID: 224604391897805696}
+  mainMenuName: LobbyScene
+  countDownThingy: {fileID: 114962362303595626, guid: 853e05f3d1256794e9bdcfc8ceef0be9,
+    type: 2}
+  message: {fileID: 114032998341704072, guid: 476bae28ca10e5943910311bcc9adca8, type: 2}
+  canvas: {fileID: 0}
 --- !u!114 &114652193331444508
 MonoBehaviour:
   m_ObjectHideFlags: 1
