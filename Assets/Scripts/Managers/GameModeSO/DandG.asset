@@ -19,8 +19,8 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  m_scoreToWin: 20
-  m_gamewinner: 4
+  m_scoreToWin: 200
+  m_gamewinner: 3
   winField: {fileID: 0}
   myIntroSeq: {fileID: 1448898301354294, guid: 6a02264ac61748b4db00c9754729e3de, type: 2}
   davidKillPoints: 2
