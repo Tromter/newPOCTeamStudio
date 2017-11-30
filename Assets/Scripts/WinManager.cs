@@ -58,7 +58,13 @@ public class WinManager : MonoBehaviour {
         for(int i = 0; i < stats.Length; i++)
         {
             PlayerMovement playerData = GameManager.Instance.players[i];
-            stats[i].text = "Total Kills: " + playerData.killCount;
+            EndScreenManager.playerVote playerVote = new EndScreenManager.playerVote();
+            playerVote.playerInput = playerData.GetComponent<PlayerInput>();
+            playerVote.playerNumber = playerData.playerNumber;
+            playerVote.voteType = 0;
+            EndScreenManager.instance.players.Add(playerVote);
+            stats[i].text = "Player " + (i + 1) + ":";
+            stats[i].text += "\nTotal Kills: " + playerData.killCount;
             stats[i].text += "\nTotal Deaths: " + playerData.totalDeaths;
             stats[i].text += "\nLongest Life: " + Mathf.Round(playerData.longestLifeSpan) + " seconds";
             string favWeapon = playerData.favWeapons.Keys.Max();
