@@ -35,8 +35,9 @@ public class PlayerReadyObject : MonoBehaviour {
 	public Color lockedColor;
 	private Image bgImage;
 
-	bool upHit = false;
-	bool downHit = false;
+//	bool upHit = false;
+//	bool downHit = false;
+	bool scrollHit = false;
 	bool submitHit = false;
 	// Use this for initialization
 	void Start () {
@@ -56,8 +57,9 @@ public class PlayerReadyObject : MonoBehaviour {
 		if (InputManager.Devices.Count >= playerID){
 			controllerAvail = true;
 
-			upHit = InputManager.Devices[playerID - 1].DPadUp.WasPressed;
-			downHit = InputManager.Devices[playerID - 1].DPadDown.WasPressed;
+//			upHit = InputManager.Devices[playerID - 1].DPadUp.WasPressed;
+//			downHit = InputManager.Devices[playerID - 1].DPadDown.WasPressed;
+			scrollHit = InputManager.Devices[playerID - 1].Action2.WasPressed;
             submitHit = InputManager.Devices[playerID - 1].Action1.WasPressed;
 
             if (lockedIn)
@@ -70,7 +72,7 @@ public class PlayerReadyObject : MonoBehaviour {
             }
             else
             {
-                if (upHit)
+				if (scrollHit)
                 {
                     viewingMod += 1;
                 }
