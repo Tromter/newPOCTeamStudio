@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 224604391897805696}
-  mainMenuName: LobbyScene
+  mainMenuName: GameMenuScene
   countDownThingy: {fileID: 114962362303595626, guid: 853e05f3d1256794e9bdcfc8ceef0be9,
     type: 2}
   message: {fileID: 114032998341704072, guid: 476bae28ca10e5943910311bcc9adca8, type: 2}

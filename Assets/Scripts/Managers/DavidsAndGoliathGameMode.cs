@@ -35,15 +35,19 @@ public class DavidsAndGoliathGameMode : GameMode {
     {
         if(playerNum != currentGoliath && killedPlayer.playerNumber != currentGoliath) { // david on david
             m_playerScores[playerNum - 1] += davidKillPoints;
+            m_players[playerNum - 1].myCanvasManager.PopupMessage("+" + davidKillPoints, .5f, .25f, 1f, 1.2f);
         }
         else if(playerNum == currentGoliath) { // goliath on david
             m_playerScores[playerNum - 1] += goliathKillDavidPoints;
+            m_players[playerNum - 1].myCanvasManager.PopupMessage("+" + goliathKillDavidPoints, .5f, .25f, 1f, 1.2f);
         }
         else if(currentGoliath == 0) { // first damage
             m_playerScores[playerNum - 1] += davidKillPoints;
+            m_players[playerNum - 1].myCanvasManager.PopupMessage("+" + davidKillPoints, .5f, .25f, 1f, 1.2f);
         }
         else { // david on goliath
             m_playerScores[playerNum - 1] += goliathKillPoints;
+            m_players[playerNum - 1].myCanvasManager.PopupMessage("+" + goliathKillPoints, .5f, .25f, 1f, 1.2f);
         }
         m_players[playerNum - 1].myScore.text = "P" + playerNum + " Score: " + m_playerScores[playerNum - 1];
     }
