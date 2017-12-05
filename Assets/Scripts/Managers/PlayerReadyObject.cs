@@ -13,7 +13,6 @@ public class PlayerReadyObject : MonoBehaviour {
 	public SubModifier teleReference;
 	public GameObject teleImage;
 	public SubModifier chosenSubmodifier;
-
 	private PlayerInput myInput;
 
 	public int playerID = 0;
@@ -45,9 +44,11 @@ public class PlayerReadyObject : MonoBehaviour {
 
 		bgImage = this.GetComponent<Image>();
 
+        bgImage.color = notLockedColor;
+
 		myInput = this.GetComponent<PlayerInput>();
 
-		myInput.playerNum = playerID;
+		myInput.playerNum = playerID - 1;
 	}
 	
 	// Update is called once per frame
@@ -57,12 +58,60 @@ public class PlayerReadyObject : MonoBehaviour {
 
 			upHit = InputManager.Devices[playerID - 1].DPadUp.WasPressed;
 			downHit = InputManager.Devices[playerID - 1].DPadDown.WasPressed;
-			submitHit = InputManager.Devices[playerID - 1].Action1.WasPressed;
+            submitHit = InputManager.Devices[playerID - 1].Action1.WasPressed;
+
+            if (lockedIn)
+            {
+                if (myInput.circlePressed)
+                {
+                    lockedIn = false;
+                    bgImage.color = notLockedColor;
+                }
+            }
+            else
+            {
+                if (upHit)
+                {
+                    viewingMod += 1;
+                }
+                if (submitHit)
+                {
+                    if (viewingMod == 0)
+                        chosenSubmodifier = dashReference;
+                    else if (viewingMod == 1)
+                        chosenSubmodifier = shieldReference;
+                    else if (viewingMod == 2)
+                        chosenSubmodifier = teleReference;
+
+                    Debug.Log("Shit!");
+                    lockedIn = true;
+                    bgImage.color = lockedColor;
+                }
+                if (viewingMod == 0)
+                {
+                    dashImage.SetActive(true);
+                    shieldImage.SetActive(false);
+                    teleImage.SetActive(false);
+                }
+                else if (viewingMod == 1)
+                {
+                    dashImage.SetActive(false);
+                    shieldImage.SetActive(true);
+                    teleImage.SetActive(false);
+                }
+                else if (viewingMod == 2)
+                {
+                    dashImage.SetActive(false);
+                    shieldImage.SetActive(false);
+                    teleImage.SetActive(true);
+                }
+            }
 		}
 		else {
 			controllerAvail = false;
 		}
 
+        /*
 		if (!lockedIn){ //selection thingy
 			if (bgImage.color != notLockedColor)
 				bgImage.color = notLockedColor;
@@ -105,5 +154,6 @@ public class PlayerReadyObject : MonoBehaviour {
 				lockedIn = false;
 			}
 		}
+        */
 	}
 }
