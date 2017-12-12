@@ -489,6 +489,8 @@ MonoBehaviour:
   shootHeld: 0
   strafeControls: 0
   timeAlive: 0
+  currentLife: 0
+  longestLifeSpan: 0
   killCount: 0
   currentLifeKillCount: 0
   totalDeaths: 0
@@ -501,6 +503,7 @@ MonoBehaviour:
   explosionPrefab: {fileID: 4351143469828082, guid: 305e6463302aab842ab7073618406168,
     type: 2}
   weap: {fileID: 11400000, guid: a7feb9444b3cc0a42b3019bdb7fe8ddc, type: 2}
+  heldWeaponTime: 0
   sub: {fileID: 11400000, guid: 848ee8d69804449219a13bf3d44bdf5d, type: 2}
   weapExp: 0
   upgradeObject: {fileID: 0}
@@ -716,6 +719,7 @@ MonoBehaviour:
   shootButtonHeld: 0
   dashButtonPressed: 0
   weaponSwapButtonPressed: 0
+  circlePressed: 0
 --- !u!114 &114692962347593534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -728,7 +732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipSprites:
-  - {fileID: 21300000, guid: 1242ae6ff795d334189fa89c1f15164b, type: 3}
+  - {fileID: 21300000, guid: 40ec12b5db36eda4584fa19b605b2001, type: 3}
   - {fileID: 21300000, guid: 793a3c46c4dfe39478b128b19de4090d, type: 3}
   - {fileID: 21300000, guid: 09764acba9374da4a9c8ea37eb8e5f37, type: 3}
   - {fileID: 21300000, guid: dbba79dbe1eea574b9667054bf29fdf7, type: 3}
@@ -737,7 +741,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: d971b7f18b13849409c36c608a0def8d, type: 3}
   - {fileID: 21300000, guid: 933b2e69d23781544884dc6fa31def0a, type: 3}
   - {fileID: 21300000, guid: 2a7f17ab16b241140823024de7a98e8f, type: 3}
-  - {fileID: 21300000, guid: ded15f6c1cb30ed4e866896d646eaf2d, type: 3}
+  - {fileID: 21300000, guid: 402d8967057d56642bfe0dd29979764e, type: 3}
   perSpriteSizeBuff: 1.25
   audio_fx: {fileID: 1384093166755910, guid: 38a44bf9637b6407088dafa236008e48, type: 2}
 --- !u!212 &212288976245786514
@@ -842,7 +846,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: af9d891d1122a044fa950d868e32d377, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -862,8 +866,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 60
-  m_Sprite: {fileID: 21300000, guid: 1242ae6ff795d334189fa89c1f15164b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 40ec12b5db36eda4584fa19b605b2001, type: 3}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
