@@ -3024,12 +3024,27 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 224715355607674656, guid: 1dd54d55a1f13584dac6f315549964f0,
+    - target: {fileID: 114619738211513134, guid: 1dd54d55a1f13584dac6f315549964f0,
+        type: 2}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1594414950}
+    - target: {fileID: 224981013743721526, guid: 1dd54d55a1f13584dac6f315549964f0,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -245
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224715355607674656, guid: 1dd54d55a1f13584dac6f315549964f0,
+    - target: {fileID: 224981013743721526, guid: 1dd54d55a1f13584dac6f315549964f0,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224986116511800898, guid: 1dd54d55a1f13584dac6f315549964f0,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 50.00003
+      objectReference: {fileID: 0}
+    - target: {fileID: 224986116511800898, guid: 1dd54d55a1f13584dac6f315549964f0,
         type: 2}
       propertyPath: m_LocalPosition.y
       value: 33.949997
@@ -3044,31 +3059,16 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 33.949997
       objectReference: {fileID: 0}
-    - target: {fileID: 224986116511800898, guid: 1dd54d55a1f13584dac6f315549964f0,
+    - target: {fileID: 224715355607674656, guid: 1dd54d55a1f13584dac6f315549964f0,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 50.00003
+      value: -245
       objectReference: {fileID: 0}
-    - target: {fileID: 224986116511800898, guid: 1dd54d55a1f13584dac6f315549964f0,
+    - target: {fileID: 224715355607674656, guid: 1dd54d55a1f13584dac6f315549964f0,
         type: 2}
       propertyPath: m_LocalPosition.y
       value: 33.949997
       objectReference: {fileID: 0}
-    - target: {fileID: 224981013743721526, guid: 1dd54d55a1f13584dac6f315549964f0,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224981013743721526, guid: 1dd54d55a1f13584dac6f315549964f0,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114619738211513134, guid: 1dd54d55a1f13584dac6f315549964f0,
-        type: 2}
-      propertyPath: canvas
-      value: 
-      objectReference: {fileID: 1594414950}
     - target: {fileID: 1022101014995592, guid: 1dd54d55a1f13584dac6f315549964f0, type: 2}
       propertyPath: m_IsActive
       value: 0
