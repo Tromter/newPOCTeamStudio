@@ -68,9 +68,18 @@ public class WinManager : MonoBehaviour {
             stats[i].text += "\nTotal Kills: " + playerData.killCount;
             stats[i].text += "\nTotal Deaths: " + playerData.totalDeaths;
             stats[i].text += "\nLongest Life: " + Mathf.Round(playerData.longestLifeSpan) + " seconds";
-            string favWeapon = playerData.favWeapons.Keys.Max();
-            float timeHeld = playerData.favWeapons[favWeapon];
-            stats[i].text += "\nFavorite Weapon: " + favWeapon + "(" + Mathf.Round(timeHeld) + "s)";
+
+            ShotModifier favWeap = playerData.favWeapons.ElementAt(0).Key;
+            float time = playerData.favWeapons.ElementAt(0).Value;
+
+            for (int j = 0; j < playerData.favWeapons.Count; j++)
+            {
+                if(playerData.favWeapons.ElementAt(j).Value > time) {
+                    favWeap = playerData.favWeapons.ElementAt(j).Key;
+                    time = playerData.favWeapons.ElementAt(j).Value;
+                }
+            }
+            stats[i].text += "\nFavorite Weapon: " + favWeap.modName + "(" + Mathf.Round(time) + "s)";
             stats[i].color = playerData.GetComponent<SpriteRenderer>().color;
 
         }

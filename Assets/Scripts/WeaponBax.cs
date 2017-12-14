@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponBax : MonoBehaviour {
 
     public ShotModifier weaponHeld;
+    public UpgradeObject mySpawn;
     public float lifeTime;
     float startTime;
 
@@ -32,6 +33,8 @@ public class WeaponBax : MonoBehaviour {
         if(player != null)
         {
             player.pickUpWeapon(weaponHeld);
+            mySpawn.heldBox = null;
+            mySpawn.GetComponent<SpriteRenderer>().color = Color.clear;
             ParticleOverlord.instance.SpawnParticle(this.transform.position, "PickUpParticle", player.GetComponent<SpriteRenderer>().color);
             Destroy(gameObject);
         }

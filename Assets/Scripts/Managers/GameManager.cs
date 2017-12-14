@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour {
 
     #endregion
 
+    public Transform nextWeaponSpawn;
+    public Color weaponSpawnCharging;
+    public Color weaponSpawnReady;
+
     #region UI Stuff
 
     public GameObject scoreBoard;
@@ -75,7 +79,11 @@ public class GameManager : MonoBehaviour {
 							newPlayer.myScore.text = "P" + newPlayer.playerNumber + " Score: 0";
 		}
 		weapSpawnRechargeStart = Time.time;
-
+        for(int i = 0; i < weaponSpawns.Length; i++)
+        {
+            SpriteRenderer weapsr = weaponSpawns[i].GetComponent<SpriteRenderer>();
+            weapsr.color = Color.clear;
+        }
 		if (GameObject.Find("DataTransfer") != null){
 			FromMenuData sumData = GameObject.Find("DataTransfer").GetComponent<FromMenuData>();
 			for (int i = 0; i < 4; i++) {
@@ -92,36 +100,43 @@ public class GameManager : MonoBehaviour {
 		}
 		currentGameMode.RunGameMode();
         if (Input.GetKeyDown(KeyCode.R)) { SceneManager.LoadScene(SceneManager.GetActiveScene().name); }
-        if(gameRunning)
-        {
-            if(Time.time - weapSpawnRechargeStart >= weapRechargeDuration) { spawnNewWeapon(); }
+        if(gameRunning) {
+            if(Time.time - weapSpawnRechargeStart >= weapRechargeDuration) {
+                spawnNewWeapon();
+            }
+            else if(nextWeaponSpawn != null) {
+                SpriteRenderer sr = nextWeaponSpawn.GetComponent<SpriteRenderer>();
+                sr.color = Color.Lerp(Color.clear, weaponSpawnCharging, (Time.time - weapSpawnRechargeStart) / weapRechargeDuration);
+            }
         }
 	}
 
     void spawnNewWeapon()
     {
-        List<Vector2> potentialPos = new List<Vector2>();
-        for(int i = 0; i < weaponSpawns.Length; i++) {
-            potentialPos.Add(weaponSpawns[i].position);
-        }
-        shuffle(potentialPos); 
-		int randSelect;
-        while(potentialPos.Count > 0)
-        {
-			randSelect = Random.Range (0, potentialPos.Count);
-			Vector2 pos = potentialPos[randSelect];
-            Collider2D coll = Physics2D.OverlapBox(pos, Vector2.one, 0);
-            if(coll != null && coll.GetComponent<WeaponBax>()) {
-                potentialPos.Remove(pos);
-                continue;
-            }
-            WeaponBax newWeapon = Instantiate(weaponBoxPrefab, pos, Quaternion.identity);
+        if(nextWeaponSpawn != null) { // if there is a next weapon spawn queued
+            SpriteRenderer sr = nextWeaponSpawn.GetComponent<SpriteRenderer>();
+            sr.color = weaponSpawnReady;
+            WeaponBax newWeapon = Instantiate(weaponBoxPrefab, nextWeaponSpawn.position, Quaternion.identity);
+            newWeapon.mySpawn = nextWeaponSpawn.GetComponent<UpgradeObject>();
+            nextWeaponSpawn.GetComponent<UpgradeObject>().heldBox = newWeapon;
             int rand = Random.Range(0, shotMods.Length);
             newWeapon.weaponHeld = shotMods[rand];
             newWeapon.GetComponent<SpriteRenderer>().sprite = shotSprites[rand];
-            weapSpawnRechargeStart = Time.time;
-            weapRechargeDuration = Random.Range(6f, 10f);
-            break;
+        }
+
+        // get the next weapon spawn
+        List<Transform> potentialPos = new List<Transform>();
+        for(int i = 0; i < weaponSpawns.Length; i++) {
+            UpgradeObject upob = weaponSpawns[i].GetComponent<UpgradeObject>();
+            if(upob.heldBox == null) { // if this one is available, add it to the list
+                potentialPos.Add(weaponSpawns[i]);
+            }
+        }
+        nextWeaponSpawn = null; // in case nothing is available
+        if (potentialPos.Count > 0) { // grab a random one
+            shuffle(potentialPos);
+            int randSelect = Random.Range(0, potentialPos.Count);
+            nextWeaponSpawn = potentialPos[randSelect];
         }
     }
 
