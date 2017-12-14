@@ -43,6 +43,9 @@ public class PowerCoreGameMode : GameMode {
         {
             m_playerScores[playerNum - 1] += coreHolderKillPoints * killModifier;
             m_players[playerNum - 1].myCanvasManager.PopupMessage("+" + coreHolderKillPoints * killModifier, .5f, .25f, 1f, 1.2f);
+			HoldToWinItem ballRef = FindObjectOfType<HoldToWinItem>();
+			ballRef.currentHolderTransform = m_players[playerNum - 1].transform;
+			m_players[playerNum - 1].upgradeObject = ballRef.transform;
         }
         else {
             m_playerScores[playerNum - 1] += normalKillPoints * killModifier;
