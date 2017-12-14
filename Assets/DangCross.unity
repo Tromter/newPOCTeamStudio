@@ -650,7 +650,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 268182054}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 201.8996, z: -1}
+  m_LocalPosition: {x: 0, y: 201.84076, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1772850971}
@@ -727,6 +727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 282133267}
   - component: {fileID: 282133268}
+  - component: {fileID: 282133269}
   m_Layer: 0
   m_Name: WeaponSpawns
   m_TagString: Untagged
@@ -791,6 +792,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &282133269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 282133266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 0}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &288261496
 Prefab:
   m_ObjectHideFlags: 0
@@ -1817,6 +1834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 678681725}
   - component: {fileID: 678681726}
+  - component: {fileID: 678681727}
   m_Layer: 0
   m_Name: WeaponSpawns (2)
   m_TagString: Untagged
@@ -1881,6 +1899,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &678681727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 678681724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 0}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &744019359
 Prefab:
   m_ObjectHideFlags: 0
@@ -2074,6 +2108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 924440238}
   - component: {fileID: 924440239}
+  - component: {fileID: 924440240}
   m_Layer: 0
   m_Name: WeaponSpawns (1)
   m_TagString: Untagged
@@ -2138,6 +2173,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &924440240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 924440237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 0}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &938510124
 Prefab:
   m_ObjectHideFlags: 0
@@ -2899,6 +2950,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1302186253}
   - component: {fileID: 1302186254}
+  - component: {fileID: 1302186255}
   m_Layer: 0
   m_Name: WeaponSpawns (3)
   m_TagString: Untagged
@@ -2963,6 +3015,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1302186255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1302186252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 0}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1347058545
 GameObject:
   m_ObjectHideFlags: 0
@@ -3318,8 +3386,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1594414947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 373.5, y: 210, z: 0}
-  m_LocalScale: {x: 0.93375, y: 0.93375, z: 0.93375}
+  m_LocalPosition: {x: 314, y: 176.5, z: 0}
+  m_LocalScale: {x: 0.785, y: 0.785, z: 0.785}
   m_Children:
   - {fileID: 333108877}
   - {fileID: 268182055}
@@ -4769,6 +4837,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ac583bbd13ca9e8458a42b68a4b3f5a9, type: 3}
   weaponBoxPrefab: {fileID: 114906319501233956, guid: c213eaf5a4261af4cabd3ec197272343,
     type: 2}
+  nextWeaponSpawn: {fileID: 0}
+  weaponSpawnCharging: {r: 0.94482756, g: 0, b: 1, a: 1}
+  weaponSpawnReady: {r: 1, g: 0.68275857, b: 0, a: 1}
   scoreBoard: {fileID: 268182054}
   playerScoreCard: {fileID: 1734548347357484, guid: e8f5efeea39b9e548bec069d7cbf87d5,
     type: 2}

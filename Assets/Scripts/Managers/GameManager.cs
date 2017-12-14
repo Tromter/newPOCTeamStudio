@@ -138,6 +138,8 @@ public class GameManager : MonoBehaviour {
             int randSelect = Random.Range(0, potentialPos.Count);
             nextWeaponSpawn = potentialPos[randSelect];
         }
+        weapSpawnRechargeStart = Time.time;
+        weapRechargeDuration = Random.Range(6f, 10f);
     }
 
     void shuffle<T>(List<T> arr)

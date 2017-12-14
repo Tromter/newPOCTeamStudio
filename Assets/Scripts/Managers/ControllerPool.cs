@@ -9,7 +9,7 @@ public class ControllerPool : MonoBehaviour {
 
 	public bool debugHas4 = false;
 
-	public InputDevice[] connectedDevices;
+	public InputDevice[] connectedDevices = new InputDevice[4];
 	public int numConnected = 0;
 	private bool fourConnected = false;
 	// Use this for initialization
@@ -24,17 +24,23 @@ public class ControllerPool : MonoBehaviour {
 		InputManager.OnDeviceDetached -= RemoveControllerFromPool;
 	}
 
-	void Awake(){
-		if (me == null) {
+	void Awake() {
+        // DontDestroyOnLoad(this.gameObject);
+        /*
+        if (me == null) {
 			me = this;
-		} else {
-			Destroy (this.gameObject);
+		} else if(me != this)
+        {
+			Destroy (me.gameObject);
+            me = this;
 		}
+        */
+        me = this;
 	}
 
 	void Start () {
-		DontDestroyOnLoad (this.gameObject);
-		connectedDevices = new InputDevice[4];
+		// DontDestroyOnLoad (this.gameObject);
+		// connectedDevices = new InputDevice[4];
 	}
 	
 	// Update is called once per frame

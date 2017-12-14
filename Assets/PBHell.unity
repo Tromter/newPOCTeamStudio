@@ -788,6 +788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 282133267}
   - component: {fileID: 282133268}
+  - component: {fileID: 282133269}
   m_Layer: 0
   m_Name: WeaponSpawns
   m_TagString: Untagged
@@ -852,6 +853,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &282133269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 282133266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 0}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &282463454
 Prefab:
   m_ObjectHideFlags: 0
@@ -1598,6 +1615,7 @@ GameObject:
   m_Component:
   - component: {fileID: 501240486}
   - component: {fileID: 501240487}
+  - component: {fileID: 501240488}
   m_Layer: 0
   m_Name: WeaponSpawns (5)
   m_TagString: Untagged
@@ -1662,6 +1680,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &501240488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 501240485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 0}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &569291777 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1013147839176870, guid: b7a82a74c94114840abc9253caba92c9,
@@ -2093,6 +2127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 678681725}
   - component: {fileID: 678681726}
+  - component: {fileID: 678681727}
   m_Layer: 0
   m_Name: WeaponSpawns (2)
   m_TagString: Untagged
@@ -2157,6 +2192,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &678681727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 678681724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 0}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &713951425
 GameObject:
   m_ObjectHideFlags: 0
@@ -2182,7 +2233,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 713951425}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 227.09416, z: -1}
+  m_LocalPosition: {x: 0, y: 201.84076, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 234640971}
@@ -2636,6 +2687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 924440238}
   - component: {fileID: 924440239}
+  - component: {fileID: 924440240}
   m_Layer: 0
   m_Name: WeaponSpawns (1)
   m_TagString: Untagged
@@ -2700,6 +2752,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &924440240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 924440237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 0}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &930545624 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4742190017534474, guid: b7a82a74c94114840abc9253caba92c9,
@@ -3229,6 +3297,48 @@ Transform:
   m_PrefabParentObject: {fileID: 4742190017534474, guid: b7a82a74c94114840abc9253caba92c9,
     type: 2}
   m_PrefabInternal: {fileID: 1241227149}
+--- !u!1 &1244692836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1244692838}
+  - component: {fileID: 1244692837}
+  m_Layer: 0
+  m_Name: ControllerPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1244692837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1244692836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ec6bd85e04b0845b117ece61fd88a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugHas4: 0
+  numConnected: 0
+--- !u!4 &1244692838
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1244692836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1251992099
 GameObject:
   m_ObjectHideFlags: 0
@@ -3374,6 +3484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1302186253}
   - component: {fileID: 1302186254}
+  - component: {fileID: 1302186255}
   m_Layer: 0
   m_Name: WeaponSpawns (3)
   m_TagString: Untagged
@@ -3438,6 +3549,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1302186255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1302186252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 0}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1345527140 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4742190017534474, guid: b7a82a74c94114840abc9253caba92c9,
@@ -3900,8 +4027,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1594414947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 265.5, y: 166, z: 0}
-  m_LocalScale: {x: 0.66375, y: 0.66375, z: 0.66375}
+  m_LocalPosition: {x: 314, y: 176.5, z: 0}
+  m_LocalScale: {x: 0.785, y: 0.785, z: 0.785}
   m_Children:
   - {fileID: 1748673702}
   - {fileID: 333108877}
@@ -4176,6 +4303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1653128417}
   - component: {fileID: 1653128418}
+  - component: {fileID: 1653128419}
   m_Layer: 0
   m_Name: WeaponSpawns (4)
   m_TagString: Untagged
@@ -4240,6 +4368,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1653128419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1653128416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 0}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &1674100969
 Prefab:
   m_ObjectHideFlags: 0
@@ -5498,6 +5642,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ac583bbd13ca9e8458a42b68a4b3f5a9, type: 3}
   weaponBoxPrefab: {fileID: 114906319501233956, guid: c213eaf5a4261af4cabd3ec197272343,
     type: 2}
+  nextWeaponSpawn: {fileID: 0}
+  weaponSpawnCharging: {r: 0, g: 0, b: 0, a: 0}
+  weaponSpawnReady: {r: 0, g: 0, b: 0, a: 0}
   scoreBoard: {fileID: 713951425}
   playerScoreCard: {fileID: 1734548347357484, guid: e8f5efeea39b9e548bec069d7cbf87d5,
     type: 2}
