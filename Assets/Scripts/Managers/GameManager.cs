@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void DoSetup(){
+        scoreBoard.SetActive(true);
 		for(int i = 0; i < playerCount; i++)
 		{
 			if(i >= playerSpawns.Length) { break; }
