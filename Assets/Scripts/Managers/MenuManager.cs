@@ -8,8 +8,11 @@ public class MenuManager : MonoBehaviour {
 
 	public static MenuManager instance;
 
+
 	public int DanG_SceneIndex;
 	public int PB_SceneIndex;
+
+	public GameObject launchObject;
 
 	public int chosenGameMode = 0; //0 is DanG, 1 is PowerBall
 
@@ -26,7 +29,7 @@ public class MenuManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		launchObject.SetActive (false);
 	}
 	
 	// Update is called once per frame
@@ -38,6 +41,16 @@ public class MenuManager : MonoBehaviour {
 				screens [i].anchoredPosition += Vector2.right * moveAmount;
 			}
 		}
+		if (ControllerPool.me.numConnected >= 4) {
+			if (!launchObject.activeSelf)
+				launchObject.SetActive (true);
+		} else if (launchObject.activeSelf) {
+			launchObject.SetActive (false);
+		}
+	}
+
+	public void ButtonPressSound(){
+
 	}
 
 	public void LaunchGame(){

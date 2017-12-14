@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class MenuButtonVisualizer : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
+	public AudioClip hoverClip;
+	public AudioClip clickClip;
 
     [SerializeField] Text buttonText;
     [SerializeField] Color normalColor;
@@ -20,6 +22,7 @@ public class MenuButtonVisualizer : MonoBehaviour, IPointerEnterHandler, IPointe
     public void OnPointerEnter(PointerEventData eventData)
     {
         buttonText.color = highlightColor;
+		Sound.me.Play (hoverClip);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -29,7 +32,7 @@ public class MenuButtonVisualizer : MonoBehaviour, IPointerEnterHandler, IPointe
 
     public void OnPointerClick(PointerEventData eventData) // 3
     {
-        
+		Sound.me.Play (clickClip);
     }
 
     // Update is called once per frame

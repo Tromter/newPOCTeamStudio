@@ -245,18 +245,18 @@ MonoBehaviour:
   - slideTransform: {fileID: 224334277652031276}
     slideStayDuration: 1
   - slideTransform: {fileID: 224567708595434356}
-    slideStayDuration: 1
+    slideStayDuration: 1.5
   - slideTransform: {fileID: 224750911246085420}
-    slideStayDuration: 1.5
+    slideStayDuration: 2
   - slideTransform: {fileID: 224822071549580236}
-    slideStayDuration: 1.5
+    slideStayDuration: 2
   - slideTransform: {fileID: 224205266972024150}
-    slideStayDuration: 1.5
+    slideStayDuration: 2
   slideTransitionLerpSpd: 8
-  introBloom: 50
-  introJitter: 0.5
-  introTear: 0.6
-  introColorShake: 0.25
+  introBloom: 30
+  introJitter: 0.6
+  introTear: 0.1
+  introColorShake: 0.1
   gameStartDelay: 3
 --- !u!114 &114101675271121210
 MonoBehaviour:

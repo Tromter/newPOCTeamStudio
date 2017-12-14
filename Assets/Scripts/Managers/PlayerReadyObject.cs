@@ -6,6 +6,9 @@ using InControl;
 
 public class PlayerReadyObject : MonoBehaviour {
 
+	public AudioClip swapClip;
+	public AudioClip readyClip;
+
 	public SubModifier dashReference;
 	public GameObject dashImage;
 	public SubModifier shieldReference;
@@ -13,7 +16,6 @@ public class PlayerReadyObject : MonoBehaviour {
 	public SubModifier teleReference;
 	public GameObject teleImage;
 	public SubModifier chosenSubmodifier;
-	private PlayerInput myInput;
 
 	public int playerID = 0;
 	public bool controllerAvail = false;
@@ -33,6 +35,7 @@ public class PlayerReadyObject : MonoBehaviour {
 
 	public Color notLockedColor;
 	public Color lockedColor;
+	public Color noControllerColor;
 	private Image bgImage;
 
 //	bool upHit = false;
@@ -47,34 +50,35 @@ public class PlayerReadyObject : MonoBehaviour {
 
         bgImage.color = notLockedColor;
 
-		myInput = this.GetComponent<PlayerInput>();
-
-		myInput.playerNum = playerID - 1;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (InputManager.Devices.Count >= playerID){
+		if (ControllerPool.me.numConnected >= playerID){
 			controllerAvail = true;
 
 //			upHit = InputManager.Devices[playerID - 1].DPadUp.WasPressed;
 //			downHit = InputManager.Devices[playerID - 1].DPadDown.WasPressed;
-			scrollHit = InputManager.Devices[playerID - 1].Action2.WasPressed;
-            submitHit = InputManager.Devices[playerID - 1].Action1.WasPressed;
+			scrollHit = ControllerPool.me.connectedDevices[playerID - 1].Action2.WasPressed;
+			submitHit = ControllerPool.me.connectedDevices[playerID - 1].Action1.WasPressed;
 
             if (lockedIn)
             {
-                if (myInput.circlePressed)
+				bgImage.color = lockedColor;
+				if (scrollHit)
                 {
                     lockedIn = false;
-                    bgImage.color = notLockedColor;
+                    
+					Sound.me.Play (swapClip);
                 }
             }
             else
             {
+				bgImage.color = notLockedColor;
 				if (scrollHit)
                 {
                     viewingMod += 1;
+					Sound.me.Play (swapClip);
                 }
                 if (submitHit)
                 {
@@ -85,9 +89,8 @@ public class PlayerReadyObject : MonoBehaviour {
                     else if (viewingMod == 2)
                         chosenSubmodifier = teleReference;
 
-                    Debug.Log("Shit!");
+					Sound.me.Play (readyClip);
                     lockedIn = true;
-                    bgImage.color = lockedColor;
                 }
                 if (viewingMod == 0)
                 {
@@ -111,6 +114,7 @@ public class PlayerReadyObject : MonoBehaviour {
 		}
 		else {
 			controllerAvail = false;
+			bgImage.color = noControllerColor;
 		}
 
         /*

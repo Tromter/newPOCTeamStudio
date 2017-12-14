@@ -5,7 +5,12 @@ using InControl;
 
 public class ControllerPool : MonoBehaviour {
 
+	public static ControllerPool me;
+
+	public bool debugHas4 = false;
+
 	public InputDevice[] connectedDevices;
+	public int numConnected = 0;
 	private bool fourConnected = false;
 	// Use this for initialization
 	void OnEnable(){
@@ -19,22 +24,35 @@ public class ControllerPool : MonoBehaviour {
 		InputManager.OnDeviceDetached -= RemoveControllerFromPool;
 	}
 
-	void Start () {
-		connectedDevices = new InputDevice[4];
+	void Awake(){
+		if (me == null) {
+			me = this;
+		} else {
+			Destroy (this.gameObject);
+		}
+	}
 
+	void Start () {
+		DontDestroyOnLoad (this.gameObject);
+		connectedDevices = new InputDevice[4];
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		fourConnected = true;
+		int tempNum = 0;
 		for (int i = 0; i < connectedDevices.Length; i++) {
 			
 			if (connectedDevices [i] == null) {
 				fourConnected = false;
-
+			} else {
+				tempNum += 1;
+			}
 		}
+		numConnected = tempNum;
+		if (debugHas4)
+			numConnected = 4;
 	}
-}
 
 	void AddControllerToPool(InputDevice someDevice){
 		//look for first vacancy

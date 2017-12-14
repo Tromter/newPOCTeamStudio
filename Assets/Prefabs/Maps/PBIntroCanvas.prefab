@@ -497,10 +497,10 @@ MonoBehaviour:
   - slideTransform: {fileID: 224067051300923276}
     slideStayDuration: 1.5
   slideTransitionLerpSpd: 8
-  introBloom: 50
-  introJitter: 0.5
-  introTear: 0.6
-  introColorShake: 0.25
+  introBloom: 30
+  introJitter: 0.6
+  introTear: 0.1
+  introColorShake: 0.1
   gameStartDelay: 3
 --- !u!114 &114728285717222716
 MonoBehaviour:
