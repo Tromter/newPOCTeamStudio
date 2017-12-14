@@ -12,6 +12,9 @@ public class MenuManager : MonoBehaviour {
 	public Scene[] DanGScenes;
 	public Scene[] PB_Scenes;
 
+    public int[] dang;
+    public int[] pb;
+
 	public GameObject launchObject;
 
 	public int chosenGameMode = 0; //0 is DanG, 1 is PowerBall
@@ -35,6 +38,16 @@ public class MenuManager : MonoBehaviour {
 		DanGScenes[0] = SceneManager.GetSceneByName("DangReact");
 		DanGScenes[1] = SceneManager.GetSceneByName("DangHell");
 		DanGScenes[2] = SceneManager.GetSceneByName("DangCross");
+
+        dang = new int[3];
+        dang[0] = 3;
+        dang[1] = 4;
+        dang[2] = 5;
+
+        pb = new int[3];
+        pb[0] = 6;
+        pb[1] = 7;
+        pb[2] = 8;
 
 		PB_Scenes = new Scene[3];
 		PB_Scenes[0] = SceneManager.GetSceneByName("PBReact");
@@ -70,25 +83,31 @@ public class MenuManager : MonoBehaviour {
 				canLaunch = false;
 		}
 
-		if (canLaunch){
-			SubModifier[] playerSubArray = new SubModifier[4];
-			for (int i = 0; i < 4; i++) {
-				playerSubArray [i] = playerReadys [i].chosenSubmodifier;
-			}
-			GameObject DataObject = new GameObject("DataTransfer");
-			FromMenuData newDataTransfer = DataObject.AddComponent<FromMenuData>();
-			newDataTransfer.SetData (playerSubArray);
-			if (chosenGameMode == 0) {
-				
-				//launch DanG
-				SceneManager.LoadScene(DanGScenes[chosenMap].buildIndex);
+        if (canLaunch)
+        {
+            Debug.Log("hi");
+            SubModifier[] playerSubArray = new SubModifier[4];
+            for (int i = 0; i < 4; i++)
+            {
+                playerSubArray[i] = playerReadys[i].chosenSubmodifier;
+            }
+            GameObject DataObject = new GameObject("DataTransfer");
+            FromMenuData newDataTransfer = DataObject.AddComponent<FromMenuData>();
+            newDataTransfer.SetData(playerSubArray);
+            if (chosenGameMode == 0)
+            {
 
-			} else if (chosenGameMode == 1) {
-				
-				//launch Powerball
-				SceneManager.LoadScene(PB_Scenes[chosenMap].buildIndex);
-			}
-		}
+                //launch DanG
+                SceneManager.LoadScene(dang[chosenMap]);
+
+            }
+            else if (chosenGameMode == 1)
+            {
+
+                //launch Powerball
+                SceneManager.LoadScene(pb[chosenMap]);
+            }
+        }
 	}
 
 	public void SetCurrentScreen(int newScreen){
