@@ -47,13 +47,11 @@ public class CamControl : MonoBehaviour {
 	}
 
 	public void AddShake(float intensityModifer){
-        Debug.Log("Shook AF");
         if(shakeEffect != null) { StopCoroutine(shakeEffect); }
 		shakeEffect = StartCoroutine(shakeCamera(intensityModifer));
 	}
 
 	public void BlastBloom(float intensityModifier){
-		Debug.Log("Bloom AF");
 		if(bloomEffect != null) { StopCoroutine(bloomEffect); }
 		bloomEffect = StartCoroutine(bloomBurst(intensityModifier));
 	}
