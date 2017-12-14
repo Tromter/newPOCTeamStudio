@@ -30,7 +30,7 @@ public class EndScreenManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         instance = this;
-        stats = WinManager.instance.WinText.transform.parent.Find("Stats");
+        stats = WinManager.instance.winBG.transform.Find("Stats");
 	}
 	
 	// Update is called once per frame
@@ -43,7 +43,7 @@ public class EndScreenManager : MonoBehaviour {
             {
                 Debug.Log("Player " + players[i].playerNumber + " wants more bullshit!");
                 Transform statPage = stats.Find("Player " + players[i].playerNumber);
-                statPage.Find("Ready").gameObject.SetActive(true);
+                statPage.Find("Ready").GetComponent<Image>().enabled = true;
                 players[i].voteType = 1;
             }
             if (players[i].playerInput.circlePressed) { StartCoroutine(dontBeginAgain()); } // go back to lobby like the filthy casual you are
