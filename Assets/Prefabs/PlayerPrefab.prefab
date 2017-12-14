@@ -541,8 +541,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8a4d325708443e4ca52cb7d076f8e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  normalSpeed: 20
+  speed: 40
+  normalSpeed: 40
   playerNumber: 1
   max_health: 1
   health: 0
@@ -727,6 +727,7 @@ MonoBehaviour:
   healthText: {fileID: 114332976459789206}
   healthBar: {fileID: 114075809292920754}
   healthBarInner: {fileID: 114330539528599760}
+  alpha: 0.7
 --- !u!114 &114500235032979962
 MonoBehaviour:
   m_ObjectHideFlags: 1
