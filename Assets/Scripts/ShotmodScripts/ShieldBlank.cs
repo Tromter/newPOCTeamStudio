@@ -20,7 +20,7 @@ public class ShieldBlank : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		myRB = this.GetComponent<Rigidbody2D> ();
-		origScale = new Vector3 (1, 1, 1);
+		origScale = new Vector3 (3.2f, 3.2f, 1f);
 		this.transform.localScale = origScale;
 
 	}
@@ -33,8 +33,8 @@ public class ShieldBlank : MonoBehaviour {
 			Destroy (this.gameObject);
 		}
 
-		float sinwave = Mathf.Sin (elapsedLife * 10) + 1;
-		this.transform.localScale = origScale * sinwave * scale;
+//		float sinwave = Mathf.Sin (elapsedLife * 10) + 1;
+//		this.transform.localScale = origScale * sinwave * scale;
 	}
 
 	void OnTriggerEnter2D(Collider2D other){

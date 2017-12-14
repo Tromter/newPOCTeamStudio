@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour {
     public float longestLifeSpan;
     public int killCount;
 
-    public Dictionary<string, float> favWeapons = new Dictionary<string, float>();
+    public Dictionary<ShotModifier, float> favWeapons = new Dictionary<ShotModifier, float>();
 
     public int currentLifeKillCount;
     public int totalDeaths;
@@ -86,8 +86,8 @@ public class PlayerMovement : MonoBehaviour {
         timeAlive = 0;
         weapExp = 0;
         myPlayerGun.currentShotMod = weap;
-        favWeapons.Add(myPlayerGun.currentShotMod.modName, 0f);
-                myScore.color = mySR.color;
+        // favWeapons.Add(myPlayerGun.currentShotMod, 0f);
+        myScore.color = mySR.color;
     }
 	
 	// Update is called once per frame
@@ -105,11 +105,11 @@ public class PlayerMovement : MonoBehaviour {
         int currLevel = 0;
         currentLife += Time.deltaTime;
         if(currentLife > longestLifeSpan) { longestLifeSpan = currentLife; }
-        if (favWeapons.ContainsKey(myPlayerGun.currentShotMod.modName)) {
-            favWeapons[myPlayerGun.currentShotMod.modName] += Time.deltaTime;
+        if (favWeapons.ContainsKey(myPlayerGun.currentShotMod)) {
+            favWeapons[myPlayerGun.currentShotMod] += Time.deltaTime;
         }
         else {
-            favWeapons.Add(myPlayerGun.currentShotMod.modName, 0f);
+            favWeapons.Add(myPlayerGun.currentShotMod, 0f);
         }
 	}
 
@@ -362,6 +362,7 @@ public class PlayerMovement : MonoBehaviour {
         currentLifeKillCount++;
 		// myScore.text = "Lv." + myPlayerGun.currentShotMod.currentLevel + " Score: " + killCount.ToString();
     }
+		
 
     public void pickUpWeapon(ShotModifier newShotMod)
     { // Replace currently held weapon and reset experience points
