@@ -363,6 +363,7 @@ public class PlayerMovement : MonoBehaviour {
         currentLifeKillCount++;
 		// myScore.text = "Lv." + myPlayerGun.currentShotMod.currentLevel + " Score: " + killCount.ToString();
     }
+		
 
     public void pickUpWeapon(ShotModifier newShotMod)
     { // Replace currently held weapon and reset experience points
