@@ -261,7 +261,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         if(upgradeObject != null)
         {
-            HoldToWinItem upgrader = GetComponent<HoldToWinItem>();
+            HoldToWinItem upgrader = upgradeObject.GetComponent<HoldToWinItem>();
             upgrader.currentHolderTransform = null;
             myKiller.pickUpUpgrader(upgrader);
             upgradeObject = null;
