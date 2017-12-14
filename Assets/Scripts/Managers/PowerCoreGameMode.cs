@@ -33,17 +33,21 @@ public class PowerCoreGameMode : GameMode {
 		}
 		else {
 			m_playerScores[playerNum - 1] += normalKillPoints;
-		}
-	}
+        }
+        m_players[playerNum - 1].myScore.text = "P" + playerNum + " Score: " + m_playerScores[playerNum - 1];
+    }
 
     public override void AddScoreKill(int playerNum, PlayerMovement killedPlayer)
     {
         if (killedPlayer.upgradeObject != null)
         {
             m_playerScores[playerNum - 1] += coreHolderKillPoints * killModifier;
+            m_players[playerNum - 1].myCanvasManager.PopupMessage("+" + coreHolderKillPoints * killModifier, .5f, .25f, 1f, 1.2f);
         }
         else {
             m_playerScores[playerNum - 1] += normalKillPoints * killModifier;
+            m_players[playerNum - 1].myCanvasManager.PopupMessage("+" + normalKillPoints * killModifier, .5f, .25f, 1f, 1.2f);
         }
+        m_players[playerNum - 1].myScore.text = "P" + playerNum + " Score: " + m_playerScores[playerNum - 1];
     }
 }
