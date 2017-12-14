@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TurnerTestNov14/GameMenuScene.unity
+    path: Assets/GameMenuScene.unity
     guid: 2f21fadc82efe7549affde37ed56c6c4
   - enabled: 1
     path: Assets/MapTestType1Gabe.unity
@@ -14,3 +14,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/MapTestType1GabePB.unity
     guid: 8787ab7c40c25cf418363a614526269b
+  - enabled: 1
+    path: Assets/DangHell.unity
+    guid: c5f2301e5f2ca80409e9fc366e5455cb
+  - enabled: 1
+    path: Assets/DangCross.unity
+    guid: 017d31045cb056448bb50ede2c00a556
+  - enabled: 1
+    path: Assets/DangReact.unity
+    guid: c875b12b265f6be4b9c0055d9eca46eb
+  - enabled: 1
+    path: Assets/PBCross.unity
+    guid: 6f3a7457440926d44898de6c09c5fb36
+  - enabled: 1
+    path: Assets/PBHell.unity
+    guid: d80efcf5cc174924ba961b48fc924578
+  - enabled: 1
+    path: Assets/PBReact.unity
+    guid: 067402cb099a11344aa70623fe0dd905
