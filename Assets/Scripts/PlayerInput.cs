@@ -21,7 +21,7 @@ public class PlayerInput : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		var inputDevice = (InputManager.Devices.Count > playerNum) ? InputManager.Devices[playerNum] : null;
+		var inputDevice = (ControllerPool.me.numConnected >= playerNum) ? ControllerPool.me.connectedDevices[playerNum] : null;
 		if (inputDevice == null) {
 			//do nothing
 		} 

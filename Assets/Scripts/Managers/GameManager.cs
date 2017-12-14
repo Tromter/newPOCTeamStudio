@@ -104,10 +104,12 @@ public class GameManager : MonoBehaviour {
         for(int i = 0; i < weaponSpawns.Length; i++) {
             potentialPos.Add(weaponSpawns[i].position);
         }
-        shuffle(potentialPos);
+        shuffle(potentialPos); 
+		int randSelect;
         while(potentialPos.Count > 0)
         {
-            Vector2 pos = potentialPos[Random.Range(0, potentialPos.Count)];
+			randSelect = Random.Range (0, potentialPos.Count);
+			Vector2 pos = potentialPos[randSelect];
             Collider2D coll = Physics2D.OverlapBox(pos, Vector2.one, 0);
             if(coll != null && coll.GetComponent<WeaponBax>()) {
                 potentialPos.Remove(pos);
@@ -118,7 +120,7 @@ public class GameManager : MonoBehaviour {
             newWeapon.weaponHeld = shotMods[rand];
             newWeapon.GetComponent<SpriteRenderer>().sprite = shotSprites[rand];
             weapSpawnRechargeStart = Time.time;
-            weapRechargeDuration = Random.Range(8f, 12f);
+            weapRechargeDuration = Random.Range(6f, 10f);
             break;
         }
     }
