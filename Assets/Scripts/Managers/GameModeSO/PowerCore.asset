@@ -12,20 +12,21 @@ MonoBehaviour:
   m_Name: PowerCore
   m_EditorClassIdentifier: 
   myGM: {fileID: 0}
-  m_gameState: 1
+  gameState: 2
   m_players:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   m_playerScores:
+  - 16
   - 0
-  - 12
-  - 18
+  - 0
   - 0
   m_scoreToWin: 10
   m_gamewinner: 1
   winField: {fileID: 0}
+  myIntroSeq: {fileID: 1369308596074604, guid: 4ccff702e567d7b41927d33568d24fe2, type: 2}
   powerCorePrefab: {fileID: 1593583474526916, guid: ba1ab15a1b10aa647a0a0c607c0b7e66,
     type: 2}
   powerCoreInitialPos: {x: 0, y: 0}

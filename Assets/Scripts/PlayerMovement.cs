@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour {
         weapExp = 0;
         myPlayerGun.currentShotMod = weap;
         favWeapons.Add(myPlayerGun.currentShotMod.modName, 0f);
-        //        myScore.color = mySR.color;
+                myScore.color = mySR.color;
     }
 	
 	// Update is called once per frame
@@ -261,7 +261,7 @@ public class PlayerMovement : MonoBehaviour {
     {
         if(upgradeObject != null)
         {
-            HoldToWinItem upgrader = GetComponent<HoldToWinItem>();
+            HoldToWinItem upgrader = upgradeObject.GetComponent<HoldToWinItem>();
             upgrader.currentHolderTransform = null;
             myKiller.pickUpUpgrader(upgrader);
             upgradeObject = null;

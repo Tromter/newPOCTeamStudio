@@ -493,7 +493,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 183544702}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -200.09381, z: -1}
+  m_LocalPosition: {x: 0, y: -225.02715, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1601704403}
@@ -1187,6 +1187,11 @@ MonoBehaviour:
   currIntensity: 0
   shakeDuration: 0.2
   shakeReturn: 0.1
+  baseBloom: 0
+  bloomBurstDur: 0
+  minBloomBurst: 0
+  maxBloomBurst: 0
+  bloomIntensityCap: 0
 --- !u!114 &472172762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2903,6 +2908,48 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1345004127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1345004129}
+  - component: {fileID: 1345004128}
+  m_Layer: 0
+  m_Name: ControllerPool2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1345004128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1345004127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ec6bd85e04b0845b117ece61fd88a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugHas4: 0
+  numConnected: 0
+--- !u!4 &1345004129
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1345004127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 35.894882, y: 0.43415493, z: 90.0625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1347058545
 GameObject:
   m_ObjectHideFlags: 0
@@ -3244,8 +3291,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1594414947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 266.5, y: 166.5, z: 0}
-  m_LocalScale: {x: 0.66625, y: 0.66625, z: 0.66625}
+  m_LocalPosition: {x: 460.5, y: 259, z: 0}
+  m_LocalScale: {x: 1.15125, y: 1.15125, z: 1.15125}
   m_Children:
   - {fileID: 333108877}
   - {fileID: 183544703}
@@ -4568,6 +4615,7 @@ MonoBehaviour:
   winSliderPrefab: {fileID: 114777231114599726, guid: cdaff3656b49139418be4c9f098b4ee8,
     type: 2}
   slidersBG: {fileID: 333108878}
+  winBG: {fileID: 0}
   WinText: {fileID: 899028275}
 --- !u!114 &2113126866
 MonoBehaviour:

@@ -50,6 +50,7 @@ public class SpaceGun : MonoBehaviour {
 			newBullet.GetComponent<SpriteRenderer>().color = bulletColor;
 			newBullet.GetComponent<SpriteRenderer>().sprite = bulletSprite;
 			shootAudioSource.volume = originalVolume + (currentShotMod.GetLevel(this.GetComponent<PlayerMovement>().weapExp * levelVolumeBonus));
+			shootAudioSource.pitch = Random.Range (0.9f, 1.1f);
 			shootAudioSource.Play();
 		}
 	}
@@ -74,6 +75,7 @@ public class SpaceGun : MonoBehaviour {
 			newBullet.GetComponent<SpriteRenderer>().color = bulletColor;
             newBullet.GetComponent<SpriteRenderer>().sprite = bulletSprite;
             shootAudioSource.volume = originalVolume + (currentShotMod.GetLevel(this.GetComponent<PlayerMovement>().weapExp) * levelVolumeBonus);
+			shootAudioSource.pitch = Random.Range (0.9f, 1.1f);
 			shootAudioSource.Play();
 		}
 	}
@@ -97,6 +99,7 @@ public class SpaceGun : MonoBehaviour {
 
 			newBullet.GetComponent<SpriteRenderer>().color = bulletColor;
 			shootAudioSource.volume = originalVolume + (currentShotMod.GetLevel(this.GetComponent<PlayerMovement>().weapExp) * levelVolumeBonus);
+			shootAudioSource.pitch = Random.Range (0.9f, 1.1f);
 			shootAudioSource.Play();
 		}
 	}
@@ -120,6 +123,7 @@ public class SpaceGun : MonoBehaviour {
 
 			newBullet.GetComponent<SpriteRenderer>().color = bulletColor;
 			shootAudioSource.volume = originalVolume + (currentShotMod.GetLevel(this.GetComponent<PlayerMovement>().weapExp) * levelVolumeBonus);
+			shootAudioSource.pitch = Random.Range (0.9f, 1.1f);
 			shootAudioSource.Play();
 		}
 	}

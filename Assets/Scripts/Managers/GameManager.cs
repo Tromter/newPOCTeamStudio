@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void DoSetup(){
+        scoreBoard.SetActive(true);
 		for(int i = 0; i < playerCount; i++)
 		{
 			if(i >= playerSpawns.Length) { break; }
@@ -68,12 +69,19 @@ public class GameManager : MonoBehaviour {
 			newPlayerInput.playerNum = newPlayer.playerNumber - 1;
 			// newPlayer.GetComponent<SpriteRenderer>().color = new Color(Random.Range(0.3f, 0.9f), Random.Range(0.3f, 0.9f), Random.Range(0.3f, 0.9f));
 			newPlayer.GetComponent<SpriteRenderer>().color = playerColors[i];
-			//                GameObject newScoreCard = Instantiate(playerScoreCard);
-			//                newScoreCard.transform.SetParent(scoreBoard.transform, false);
-			//                newPlayer.myScore = newScoreCard.GetComponent<Text>();
-			//				newPlayer.myScore.text = "Lv.1 Score 0";
+			                GameObject newScoreCard = Instantiate(playerScoreCard);
+			                newScoreCard.transform.SetParent(scoreBoard.transform, false);
+			                newPlayer.myScore = newScoreCard.GetComponent<Text>();
+							newPlayer.myScore.text = "P" + newPlayer.playerNumber + " Score: 0";
 		}
 		weapSpawnRechargeStart = Time.time;
+
+		if (GameObject.Find("DataTransfer") != null){
+			FromMenuData sumData = GameObject.Find("DataTransfer").GetComponent<FromMenuData>();
+			for (int i = 0; i < 4; i++) {
+				players[i].sub = sumData.playerSubs[i];
+			}
+		}
 	}
 	
 	// Update is called once per frame
@@ -96,10 +104,12 @@ public class GameManager : MonoBehaviour {
         for(int i = 0; i < weaponSpawns.Length; i++) {
             potentialPos.Add(weaponSpawns[i].position);
         }
-        shuffle(potentialPos);
+        shuffle(potentialPos); 
+		int randSelect;
         while(potentialPos.Count > 0)
         {
-            Vector2 pos = potentialPos[Random.Range(0, potentialPos.Count)];
+			randSelect = Random.Range (0, potentialPos.Count);
+			Vector2 pos = potentialPos[randSelect];
             Collider2D coll = Physics2D.OverlapBox(pos, Vector2.one, 0);
             if(coll != null && coll.GetComponent<WeaponBax>()) {
                 potentialPos.Remove(pos);
@@ -110,7 +120,7 @@ public class GameManager : MonoBehaviour {
             newWeapon.weaponHeld = shotMods[rand];
             newWeapon.GetComponent<SpriteRenderer>().sprite = shotSprites[rand];
             weapSpawnRechargeStart = Time.time;
-            weapRechargeDuration = Random.Range(8f, 12f);
+            weapRechargeDuration = Random.Range(6f, 10f);
             break;
         }
     }

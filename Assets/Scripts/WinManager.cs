@@ -12,7 +12,7 @@ public class WinManager : MonoBehaviour {
 	public Slider winSliderPrefab;
 	public Image slidersBG;
 
-
+    public GameObject winBG;
 	public Text WinText;
 	PlayerMovement[] Players;
 	Slider[] winSliders;
@@ -51,9 +51,10 @@ public class WinManager : MonoBehaviour {
 	}
 
 	public void DisplayWinmessage(int playerInt){
-		//Debug.Log("Player " + playerInt + " has won via " + method);
-		WinText.transform.parent.gameObject.SetActive(true);
-        Transform statsSection = WinText.transform.parent.Find("Stats");
+        //Debug.Log("Player " + playerInt + " has won via " + method);
+        winBG.SetActive(true);
+		// WinText.transform.parent.gameObject.SetActive(true);
+        Transform statsSection = winBG.transform.Find("Stats");
         Text[] stats = statsSection.GetComponentsInChildren<Text>();
         for(int i = 0; i < stats.Length; i++)
         {
