@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UpgradeObject : MonoBehaviour {
 
-	public GameObject heldBox;
+	public WeaponBax heldBox;
 
 	public float chargeTime;
 	private float currentCharge;
@@ -16,24 +16,11 @@ public class UpgradeObject : MonoBehaviour {
 	private SpriteRenderer mySR;
 	// Use this for initialization
 	void Start () {
-		mySR = this.GetComponent<SpriteRenderer> ();
+		// mySR = this.GetComponent<SpriteRenderer> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (heldBox != null) {
-			if (currentCharge < chargeTime) {
 
-				currentCharge += Time.deltaTime;
-				mySR.color = Color.Lerp (startChargingColor, endChargingColor, currentCharge / chargeTime);
-				if (heldBox.activeSelf)
-					heldBox.SetActive (false);
-			} else {
-				if (!heldBox.activeSelf)
-					heldBox.SetActive (true);
-				if (mySR.color != fullyChargedColor)
-					mySR.color = fullyChargedColor;
-			}
-		}
 	}
 }
