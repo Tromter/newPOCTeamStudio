@@ -9,12 +9,13 @@ public class MenuManager : MonoBehaviour {
 	public static MenuManager instance;
 
 
-	public int DanG_SceneIndex;
-	public int PB_SceneIndex;
+	public Scene[] DanGScenes;
+	public Scene[] PB_Scenes;
 
 	public GameObject launchObject;
 
 	public int chosenGameMode = 0; //0 is DanG, 1 is PowerBall
+	public int chosenMap = 0; //0  is og
 
 	public RectTransform[] screens;
 	public float screenLerpSpeed = 0.17f;
@@ -30,6 +31,15 @@ public class MenuManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		launchObject.SetActive (false);
+		DanGScenes = new Scene[3];
+		DanGScenes[0] = SceneManager.GetSceneByName("DangReact");
+		DanGScenes[1] = SceneManager.GetSceneByName("DangHell");
+		DanGScenes[2] = SceneManager.GetSceneByName("DangCross");
+
+		PB_Scenes = new Scene[3];
+		PB_Scenes[0] = SceneManager.GetSceneByName("PBReact");
+		PB_Scenes[1] = SceneManager.GetSceneByName("PBHell");
+		PB_Scenes[2] = SceneManager.GetSceneByName("PBCross");
 	}
 	
 	// Update is called once per frame
@@ -71,12 +81,12 @@ public class MenuManager : MonoBehaviour {
 			if (chosenGameMode == 0) {
 				
 				//launch DanG
-				SceneManager.LoadScene(DanG_SceneIndex);
+				SceneManager.LoadScene(DanGScenes[chosenMap].buildIndex);
 
 			} else if (chosenGameMode == 1) {
 				
 				//launch Powerball
-				SceneManager.LoadScene(PB_SceneIndex);
+				SceneManager.LoadScene(PB_Scenes[chosenMap].buildIndex);
 			}
 		}
 	}
@@ -87,6 +97,10 @@ public class MenuManager : MonoBehaviour {
 
 	public void SetGameMode(int newGamemode){
 		chosenGameMode = newGamemode;
+	}
+
+	public void SetMap(int newMap){
+		chosenMap = newMap;
 	}
 
 	public void QuitGame(){

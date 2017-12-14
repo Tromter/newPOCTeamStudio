@@ -342,7 +342,6 @@ public class PlayerMovement : MonoBehaviour {
     IEnumerator subAction()
     {
         float startTime = Time.time;
-		Debug.Log ("Oh sheet");
         subActioning = true;
         canSubAction = false;
 		subActionRecoverTime = sub.cooldown;

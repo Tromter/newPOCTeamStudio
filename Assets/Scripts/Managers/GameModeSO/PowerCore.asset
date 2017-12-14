@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Name: PowerCore
   m_EditorClassIdentifier: 
   myGM: {fileID: 0}
-  gameState: 2
+  gameState: 1
   m_players:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   m_playerScores:
-  - 16
   - 0
   - 0
   - 0
-  m_scoreToWin: 10
+  - 0
+  m_scoreToWin: 200
   m_gamewinner: 1
   winField: {fileID: 0}
   myIntroSeq: {fileID: 1369308596074604, guid: 4ccff702e567d7b41927d33568d24fe2, type: 2}
