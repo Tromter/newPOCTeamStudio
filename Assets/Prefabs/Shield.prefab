@@ -39,7 +39,7 @@ Transform:
   m_GameObject: {fileID: 1522416713702094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.5, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -80,7 +80,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 48, y: 36}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
   life: 1
   ownerID: 0
   pierceTerrain: 1
-  scale: 3.5
+  scale: 2
   hitParticlePrefab: {fileID: 1560619582693536, guid: 390fa8fb98f35824da78679bfe2a68ef,
     type: 2}
 --- !u!212 &212071163432785642
@@ -227,7 +227,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 42d77fc09a544544296384f9b675b030, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ac4c4e47daa5954ebc52f446d124878, type: 3}
   m_Color: {r: 0, g: 0.7931032, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

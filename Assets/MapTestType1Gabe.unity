@@ -842,7 +842,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 268182054}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 201.97285, z: -1}
+  m_LocalPosition: {x: 0, y: 201.82947, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1772850971}
@@ -919,6 +919,7 @@ GameObject:
   m_Component:
   - component: {fileID: 282133267}
   - component: {fileID: 282133268}
+  - component: {fileID: 282133269}
   m_Layer: 0
   m_Name: WeaponSpawns
   m_TagString: Untagged
@@ -974,7 +975,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 42d77fc09a544544296384f9b675b030, type: 3}
-  m_Color: {r: 1, g: 0.51724136, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.51724136, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -983,6 +984,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &282133269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 282133266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 1644668421}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &288261496
 Prefab:
   m_ObjectHideFlags: 0
@@ -1532,6 +1549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 501240486}
   - component: {fileID: 501240487}
+  - component: {fileID: 501240488}
   m_Layer: 0
   m_Name: WeaponSpawns (5)
   m_TagString: Untagged
@@ -1587,7 +1605,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 42d77fc09a544544296384f9b675b030, type: 3}
-  m_Color: {r: 1, g: 0.51724136, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.51724136, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1596,6 +1614,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &501240488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 501240485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 1644668421}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &596563738
 Prefab:
   m_ObjectHideFlags: 0
@@ -1912,6 +1946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 678681725}
   - component: {fileID: 678681726}
+  - component: {fileID: 678681727}
   m_Layer: 0
   m_Name: WeaponSpawns (2)
   m_TagString: Untagged
@@ -1967,7 +2002,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 42d77fc09a544544296384f9b675b030, type: 3}
-  m_Color: {r: 1, g: 0.51724136, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.51724136, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1976,6 +2011,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &678681727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 678681724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 1644668421}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &744019359
 Prefab:
   m_ObjectHideFlags: 0
@@ -2174,6 +2225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 924440238}
   - component: {fileID: 924440239}
+  - component: {fileID: 924440240}
   m_Layer: 0
   m_Name: WeaponSpawns (1)
   m_TagString: Untagged
@@ -2229,7 +2281,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 42d77fc09a544544296384f9b675b030, type: 3}
-  m_Color: {r: 1, g: 0.51724136, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.51724136, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2238,6 +2290,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &924440240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 924440237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 1644668421}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &938510124
 Prefab:
   m_ObjectHideFlags: 0
@@ -2335,47 +2403,17 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 224424737893198416, guid: 1dd54d55a1f13584dac6f315549964f0,
+    - target: {fileID: 224981013743721526, guid: 1dd54d55a1f13584dac6f315549964f0,
         type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 224424737893198416, guid: 1dd54d55a1f13584dac6f315549964f0,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 224690759848387726, guid: 1dd54d55a1f13584dac6f315549964f0,
+    - target: {fileID: 224715355607674656, guid: 1dd54d55a1f13584dac6f315549964f0,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 190
+      value: -245
       objectReference: {fileID: 0}
-    - target: {fileID: 224690759848387726, guid: 1dd54d55a1f13584dac6f315549964f0,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -24.000023
-      objectReference: {fileID: 0}
-    - target: {fileID: 224011043106152122, guid: 1dd54d55a1f13584dac6f315549964f0,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -206.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 224011043106152122, guid: 1dd54d55a1f13584dac6f315549964f0,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 8.000046
-      objectReference: {fileID: 0}
-    - target: {fileID: 114619738211513134, guid: 1dd54d55a1f13584dac6f315549964f0,
-        type: 2}
-      propertyPath: canvas
-      value: 
-      objectReference: {fileID: 1594414950}
-    - target: {fileID: 224507739651005240, guid: 1dd54d55a1f13584dac6f315549964f0,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 148.33334
-      objectReference: {fileID: 0}
-    - target: {fileID: 224507739651005240, guid: 1dd54d55a1f13584dac6f315549964f0,
+    - target: {fileID: 224715355607674656, guid: 1dd54d55a1f13584dac6f315549964f0,
         type: 2}
       propertyPath: m_LocalPosition.y
       value: 33.949997
@@ -2390,20 +2428,50 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 33.949997
       objectReference: {fileID: 0}
-    - target: {fileID: 224715355607674656, guid: 1dd54d55a1f13584dac6f315549964f0,
+    - target: {fileID: 224507739651005240, guid: 1dd54d55a1f13584dac6f315549964f0,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -245
+      value: 148.33334
       objectReference: {fileID: 0}
-    - target: {fileID: 224715355607674656, guid: 1dd54d55a1f13584dac6f315549964f0,
+    - target: {fileID: 224507739651005240, guid: 1dd54d55a1f13584dac6f315549964f0,
         type: 2}
       propertyPath: m_LocalPosition.y
       value: 33.949997
       objectReference: {fileID: 0}
-    - target: {fileID: 224981013743721526, guid: 1dd54d55a1f13584dac6f315549964f0,
+    - target: {fileID: 114619738211513134, guid: 1dd54d55a1f13584dac6f315549964f0,
+        type: 2}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1594414950}
+    - target: {fileID: 224011043106152122, guid: 1dd54d55a1f13584dac6f315549964f0,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -206.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224011043106152122, guid: 1dd54d55a1f13584dac6f315549964f0,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8.000046
+      objectReference: {fileID: 0}
+    - target: {fileID: 224690759848387726, guid: 1dd54d55a1f13584dac6f315549964f0,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 190
+      objectReference: {fileID: 0}
+    - target: {fileID: 224690759848387726, guid: 1dd54d55a1f13584dac6f315549964f0,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -24.000023
+      objectReference: {fileID: 0}
+    - target: {fileID: 224424737893198416, guid: 1dd54d55a1f13584dac6f315549964f0,
         type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224424737893198416, guid: 1dd54d55a1f13584dac6f315549964f0,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 1022101014995592, guid: 1dd54d55a1f13584dac6f315549964f0, type: 2}
       propertyPath: m_IsActive
@@ -3168,6 +3236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1302186253}
   - component: {fileID: 1302186254}
+  - component: {fileID: 1302186255}
   m_Layer: 0
   m_Name: WeaponSpawns (3)
   m_TagString: Untagged
@@ -3223,7 +3292,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 42d77fc09a544544296384f9b675b030, type: 3}
-  m_Color: {r: 1, g: 0.51724136, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.51724136, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3232,6 +3301,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1302186255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1302186252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 1644668421}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &1347058545
 GameObject:
   m_ObjectHideFlags: 0
@@ -3692,8 +3777,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1594414947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 460.5, y: 259, z: 0}
-  m_LocalScale: {x: 1.15125, y: 1.15125, z: 1.15125}
+  m_LocalPosition: {x: 366.5, y: 206, z: 0}
+  m_LocalScale: {x: 0.91625, y: 0.91625, z: 0.91625}
   m_Children:
   - {fileID: 333108877}
   - {fileID: 268182055}
@@ -3947,6 +4032,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c213eaf5a4261af4cabd3ec197272343, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1644668421 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114906319501233956, guid: c213eaf5a4261af4cabd3ec197272343,
+    type: 2}
+  m_PrefabInternal: {fileID: 1644668420}
+  m_Script: {fileID: 11500000, guid: b531723f8185f254482b4c42b49b012d, type: 3}
 --- !u!1 &1653128416
 GameObject:
   m_ObjectHideFlags: 0
@@ -3956,6 +4047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1653128417}
   - component: {fileID: 1653128418}
+  - component: {fileID: 1653128419}
   m_Layer: 0
   m_Name: WeaponSpawns (4)
   m_TagString: Untagged
@@ -4011,7 +4103,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 42d77fc09a544544296384f9b675b030, type: 3}
-  m_Color: {r: 1, g: 0.51724136, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.51724136, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4020,6 +4112,22 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!114 &1653128419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1653128416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935569e38e8ce4c4cbe2d56b9053358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heldBox: {fileID: 1644668421}
+  chargeTime: 0
+  startChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  endChargingColor: {r: 0, g: 0, b: 0, a: 0}
+  fullyChargedColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &1683925683
 Prefab:
   m_ObjectHideFlags: 0
@@ -5222,6 +5330,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ac583bbd13ca9e8458a42b68a4b3f5a9, type: 3}
   weaponBoxPrefab: {fileID: 114906319501233956, guid: c213eaf5a4261af4cabd3ec197272343,
     type: 2}
+  nextWeaponSpawn: {fileID: 0}
+  weaponSpawnCharging: {r: 1, g: 0.47794116, b: 0.920791, a: 1}
+  weaponSpawnReady: {r: 1, g: 0.6413793, b: 0, a: 1}
   scoreBoard: {fileID: 268182054}
   playerScoreCard: {fileID: 1734548347357484, guid: e8f5efeea39b9e548bec069d7cbf87d5,
     type: 2}
