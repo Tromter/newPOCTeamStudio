@@ -662,6 +662,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db695d4c22e5d894eb8fa3f3e34c1700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverClip: {fileID: 8300000, guid: 7ca82379e9bf4604db775001b4ff5f62, type: 3}
+  clickClip: {fileID: 8300000, guid: 5a841fd29fffe4e498073e914289aee2, type: 3}
   buttonText: {fileID: 253059448}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
@@ -794,7 +796,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7c6432dc39cf25442a48bffb4dedd821, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5f4e769e3dd2dc48b1fc049f0c12e01, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1159,7 +1161,6 @@ GameObject:
   - component: {fileID: 349556883}
   - component: {fileID: 349556882}
   - component: {fileID: 349556881}
-  - component: {fileID: 349556884}
   m_Layer: 5
   m_Name: P2ReadyObject
   m_TagString: Untagged
@@ -1200,6 +1201,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e308ce1d5b7ee42804d5fb006b3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swapClip: {fileID: 8300000, guid: 7ca82379e9bf4604db775001b4ff5f62, type: 3}
+  readyClip: {fileID: 8300000, guid: 4842a047c62fb11409d1edb05b16ee42, type: 3}
   dashReference: {fileID: 11400000, guid: 848ee8d69804449219a13bf3d44bdf5d, type: 2}
   dashImage: {fileID: 1281622070}
   shieldReference: {fileID: 11400000, guid: d39609c717e3b4bc3b880ba8ec5da318, type: 2}
@@ -1212,6 +1215,7 @@ MonoBehaviour:
   lockedIn: 0
   notLockedColor: {r: 0, g: 1, b: 0.006896496, a: 0.566}
   lockedColor: {r: 0, g: 1, b: 0.007843138, a: 1}
+  noControllerColor: {r: 0.5735294, g: 0.5735294, b: 0.5735294, a: 0.628}
 --- !u!114 &349556882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1245,24 +1249,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 349556879}
---- !u!114 &349556884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 349556879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ff72cef1bf23de4693f65148ee547eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNum: 0
-  leftStickInput: {x: 0, y: 0}
-  rightStickInput: {x: 0, y: 0}
-  shootButtonHeld: 0
-  dashButtonPressed: 0
-  weaponSwapButtonPressed: 0
-  circlePressed: 0
 --- !u!1 &380120550
 GameObject:
   m_ObjectHideFlags: 0
@@ -1942,7 +1928,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1993,6 +1979,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db695d4c22e5d894eb8fa3f3e34c1700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverClip: {fileID: 8300000, guid: 7ca82379e9bf4604db775001b4ff5f62, type: 3}
+  clickClip: {fileID: 8300000, guid: 5a841fd29fffe4e498073e914289aee2, type: 3}
   buttonText: {fileID: 412814932}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
@@ -2007,7 +1995,6 @@ GameObject:
   - component: {fileID: 625133018}
   - component: {fileID: 625133017}
   - component: {fileID: 625133016}
-  - component: {fileID: 625133019}
   m_Layer: 5
   m_Name: P4ReadyObject
   m_TagString: Untagged
@@ -2048,6 +2035,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e308ce1d5b7ee42804d5fb006b3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swapClip: {fileID: 8300000, guid: 7ca82379e9bf4604db775001b4ff5f62, type: 3}
+  readyClip: {fileID: 8300000, guid: 4842a047c62fb11409d1edb05b16ee42, type: 3}
   dashReference: {fileID: 11400000, guid: 848ee8d69804449219a13bf3d44bdf5d, type: 2}
   dashImage: {fileID: 1104835890}
   shieldReference: {fileID: 11400000, guid: 848ee8d69804449219a13bf3d44bdf5d, type: 2}
@@ -2060,6 +2049,7 @@ MonoBehaviour:
   lockedIn: 0
   notLockedColor: {r: 1, g: 0.10344827, b: 0, a: 0.566}
   lockedColor: {r: 1, g: 0.101960786, b: 0, a: 1}
+  noControllerColor: {r: 0.5735294, g: 0.5735294, b: 0.5735294, a: 0.628}
 --- !u!114 &625133017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2093,24 +2083,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 625133014}
---- !u!114 &625133019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 625133014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ff72cef1bf23de4693f65148ee547eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNum: 0
-  leftStickInput: {x: 0, y: 0}
-  rightStickInput: {x: 0, y: 0}
-  shootButtonHeld: 0
-  dashButtonPressed: 0
-  weaponSwapButtonPressed: 0
-  circlePressed: 0
 --- !u!1 &637736336
 GameObject:
   m_ObjectHideFlags: 0
@@ -2242,7 +2214,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -346647522
+  randomSeed: 1854318357
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -5689,6 +5661,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db695d4c22e5d894eb8fa3f3e34c1700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverClip: {fileID: 8300000, guid: 7ca82379e9bf4604db775001b4ff5f62, type: 3}
+  clickClip: {fileID: 8300000, guid: 5a841fd29fffe4e498073e914289aee2, type: 3}
   buttonText: {fileID: 13928299}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
@@ -5841,7 +5815,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.134}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -5854,7 +5828,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 828673395}
   m_OnClick:
     m_PersistentCalls:
@@ -5916,6 +5890,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db695d4c22e5d894eb8fa3f3e34c1700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverClip: {fileID: 8300000, guid: 7ca82379e9bf4604db775001b4ff5f62, type: 3}
+  clickClip: {fileID: 8300000, guid: 5a841fd29fffe4e498073e914289aee2, type: 3}
   buttonText: {fileID: 517878171}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
@@ -6488,7 +6464,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7c6432dc39cf25442a48bffb4dedd821, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5f4e769e3dd2dc48b1fc049f0c12e01, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6557,7 +6533,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7c6432dc39cf25442a48bffb4dedd821, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5f4e769e3dd2dc48b1fc049f0c12e01, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6962,7 +6938,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7c6432dc39cf25442a48bffb4dedd821, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b5f4e769e3dd2dc48b1fc049f0c12e01, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7045,6 +7021,48 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1363175992}
+--- !u!1 &1425307652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1425307654}
+  - component: {fileID: 1425307653}
+  m_Layer: 0
+  m_Name: ControllerPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1425307653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1425307652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ec6bd85e04b0845b117ece61fd88a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugHas4: 0
+  numConnected: 0
+--- !u!4 &1425307654
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1425307652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1443368954
 GameObject:
   m_ObjectHideFlags: 0
@@ -7213,9 +7231,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db695d4c22e5d894eb8fa3f3e34c1700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverClip: {fileID: 8300000, guid: 7ca82379e9bf4604db775001b4ff5f62, type: 3}
+  clickClip: {fileID: 8300000, guid: 5a841fd29fffe4e498073e914289aee2, type: 3}
   buttonText: {fileID: 1004898576}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
+--- !u!1 &1447947513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1447947515}
+  - component: {fileID: 1447947514}
+  m_Layer: 0
+  m_Name: SoundGuy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1447947514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1447947513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec3d608f4653c5042a1b0b584c1f53bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sources: []
+  sourcePrefab: {fileID: 1438896044685224, guid: 4d1f866cea4f49f4781bf780d06ea5bc,
+    type: 2}
+  sourceNum: 5
+--- !u!4 &1447947515
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1447947513}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0836114, y: 2.3334851, z: 89.97266}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1531166959
 GameObject:
   m_ObjectHideFlags: 0
@@ -7422,7 +7486,6 @@ GameObject:
   - component: {fileID: 1559207709}
   - component: {fileID: 1559207708}
   - component: {fileID: 1559207707}
-  - component: {fileID: 1559207710}
   m_Layer: 5
   m_Name: P1ReadyObject
   m_TagString: Untagged
@@ -7463,6 +7526,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e308ce1d5b7ee42804d5fb006b3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swapClip: {fileID: 8300000, guid: 7ca82379e9bf4604db775001b4ff5f62, type: 3}
+  readyClip: {fileID: 8300000, guid: 4842a047c62fb11409d1edb05b16ee42, type: 3}
   dashReference: {fileID: 11400000, guid: 848ee8d69804449219a13bf3d44bdf5d, type: 2}
   dashImage: {fileID: 380120550}
   shieldReference: {fileID: 11400000, guid: d39609c717e3b4bc3b880ba8ec5da318, type: 2}
@@ -7475,6 +7540,7 @@ MonoBehaviour:
   lockedIn: 0
   notLockedColor: {r: 0, g: 0.83448267, b: 1, a: 0.566}
   lockedColor: {r: 0, g: 0.8352941, b: 1, a: 1}
+  noControllerColor: {r: 0.5735294, g: 0.5735294, b: 0.5735294, a: 0.628}
 --- !u!114 &1559207708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7508,24 +7574,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1559207705}
---- !u!114 &1559207710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1559207705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ff72cef1bf23de4693f65148ee547eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNum: 0
-  leftStickInput: {x: 0, y: 0}
-  rightStickInput: {x: 0, y: 0}
-  shootButtonHeld: 0
-  dashButtonPressed: 0
-  weaponSwapButtonPressed: 0
-  circlePressed: 0
 --- !u!1 &1568127600
 GameObject:
   m_ObjectHideFlags: 0
@@ -7611,7 +7659,7 @@ RectTransform:
   m_GameObject: {fileID: 1568127600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.022222223, y: 0.022222223, z: 0.022222223}
+  m_LocalScale: {x: 0.022224903, y: 0.022224903, z: 0.022224903}
   m_Children:
   - {fileID: 1757902739}
   - {fileID: 483539195}
@@ -7648,8 +7696,8 @@ MonoBehaviour:
   xInputUpdateRate: 0
   xInputOverrideBufferSize: 0
   xInputBufferSize: 0
-  enableNativeInput: 0
-  nativeInputEnableXInput: 1
+  enableNativeInput: 1
+  nativeInputEnableXInput: 0
   nativeInputPreventSleep: 0
   nativeInputOverrideUpdateRate: 0
   nativeInputUpdateRate: 0
@@ -7667,6 +7715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DanG_SceneIndex: 1
   PB_SceneIndex: 2
+  launchObject: {fileID: 828673392}
   chosenGameMode: 0
   screens:
   - {fileID: 483539195}
@@ -7847,6 +7896,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db695d4c22e5d894eb8fa3f3e34c1700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverClip: {fileID: 8300000, guid: 7ca82379e9bf4604db775001b4ff5f62, type: 3}
+  clickClip: {fileID: 8300000, guid: 5a841fd29fffe4e498073e914289aee2, type: 3}
   buttonText: {fileID: 105395494}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
@@ -7861,7 +7912,6 @@ GameObject:
   - component: {fileID: 1587070054}
   - component: {fileID: 1587070053}
   - component: {fileID: 1587070052}
-  - component: {fileID: 1587070055}
   m_Layer: 5
   m_Name: P3ReadyObject
   m_TagString: Untagged
@@ -7902,6 +7952,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42e308ce1d5b7ee42804d5fb006b3bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swapClip: {fileID: 8300000, guid: 7ca82379e9bf4604db775001b4ff5f62, type: 3}
+  readyClip: {fileID: 8300000, guid: 4842a047c62fb11409d1edb05b16ee42, type: 3}
   dashReference: {fileID: 11400000, guid: 848ee8d69804449219a13bf3d44bdf5d, type: 2}
   dashImage: {fileID: 1363175992}
   shieldReference: {fileID: 11400000, guid: d39609c717e3b4bc3b880ba8ec5da318, type: 2}
@@ -7914,6 +7966,7 @@ MonoBehaviour:
   lockedIn: 0
   notLockedColor: {r: 1, g: 0.93103456, b: 0, a: 0.566}
   lockedColor: {r: 1, g: 0.92941177, b: 0, a: 1}
+  noControllerColor: {r: 0.5735294, g: 0.5735294, b: 0.5735294, a: 0.628}
 --- !u!114 &1587070053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7947,24 +8000,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1587070050}
---- !u!114 &1587070055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1587070050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ff72cef1bf23de4693f65148ee547eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNum: 0
-  leftStickInput: {x: 0, y: 0}
-  rightStickInput: {x: 0, y: 0}
-  shootButtonHeld: 0
-  dashButtonPressed: 0
-  weaponSwapButtonPressed: 0
-  circlePressed: 0
 --- !u!1 &1632399128
 GameObject:
   m_ObjectHideFlags: 0
@@ -8049,7 +8084,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8100,6 +8135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db695d4c22e5d894eb8fa3f3e34c1700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverClip: {fileID: 8300000, guid: 7ca82379e9bf4604db775001b4ff5f62, type: 3}
+  clickClip: {fileID: 8300000, guid: 5a841fd29fffe4e498073e914289aee2, type: 3}
   buttonText: {fileID: 156129355}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
@@ -8453,6 +8490,7 @@ GameObject:
   - component: {fileID: 1894643933}
   - component: {fileID: 1894643932}
   - component: {fileID: 1894643934}
+  - component: {fileID: 1894643935}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8563,6 +8601,86 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &1894643935
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1894643927}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 37a8121819c2f1e468f04b0d5e6ab114, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.064
+  m_Pitch: 0.5
   Loop: 1
   Mute: 0
   Spatialize: 0
@@ -9032,6 +9150,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db695d4c22e5d894eb8fa3f3e34c1700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverClip: {fileID: 8300000, guid: 7ca82379e9bf4604db775001b4ff5f62, type: 3}
+  clickClip: {fileID: 8300000, guid: 5a841fd29fffe4e498073e914289aee2, type: 3}
   buttonText: {fileID: 422269047}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
@@ -9401,6 +9521,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db695d4c22e5d894eb8fa3f3e34c1700, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hoverClip: {fileID: 8300000, guid: 7ca82379e9bf4604db775001b4ff5f62, type: 3}
+  clickClip: {fileID: 8300000, guid: 5a841fd29fffe4e498073e914289aee2, type: 3}
   buttonText: {fileID: 2105810458}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
   highlightColor: {r: 0, g: 0, b: 0, a: 1}
