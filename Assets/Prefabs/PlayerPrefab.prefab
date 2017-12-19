@@ -184,7 +184,7 @@ Transform:
   m_GameObject: {fileID: 1111452813903226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children:
   - {fileID: 224025289254712658}
   - {fileID: 4181829024175698}
@@ -565,7 +565,7 @@ MonoBehaviour:
     type: 2}
   weap: {fileID: 11400000, guid: a7feb9444b3cc0a42b3019bdb7fe8ddc, type: 2}
   heldWeaponTime: 0
-  sub: {fileID: 11400000, guid: 848ee8d69804449219a13bf3d44bdf5d, type: 2}
+  sub: {fileID: 11400000, guid: d39609c717e3b4bc3b880ba8ec5da318, type: 2}
   weapExp: 0
   upgradeObject: {fileID: 0}
   upgradeFactor: 3

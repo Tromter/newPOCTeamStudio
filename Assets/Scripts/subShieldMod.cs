@@ -11,6 +11,7 @@ public class subShieldMod : SubModifier {
 	{
 		GameObject newshield = Instantiate (sinwaveshield, xXx_pla_Move_xXx.transform.position, Quaternion.identity);
         newshield.transform.parent = xXx_pla_Move_xXx.transform;
+		newshield.transform.localScale = Vector3.one * .75f;
 	}
 
 }
