@@ -9,8 +9,8 @@ public class MenuManager : MonoBehaviour {
 	public static MenuManager instance;
 
 
-	public Scene[] DanGScenes;
-	public Scene[] PB_Scenes;
+//	public Scene[] DanGScenes;
+//	public Scene[] PB_Scenes;
 
     public int[] dang;
     public int[] pb;
@@ -34,25 +34,25 @@ public class MenuManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		launchObject.SetActive (false);
-		DanGScenes = new Scene[3];
-		DanGScenes[0] = SceneManager.GetSceneByName("DangReact");
-		DanGScenes[1] = SceneManager.GetSceneByName("DangHell");
-		DanGScenes[2] = SceneManager.GetSceneByName("DangCross");
+//		DanGScenes = new Scene[3];
+//		DanGScenes[0] = SceneManager.GetSceneByName("DangReact");
+//		DanGScenes[1] = SceneManager.GetSceneByName("DangHell");
+//		DanGScenes[2] = SceneManager.GetSceneByName("DangCross");
 
         dang = new int[3];
-        dang[0] = 3;
-        dang[1] = 4;
-        dang[2] = 5;
+        dang[0] = 1;
+        dang[1] = 2;
+        dang[2] = 3;
 
         pb = new int[3];
-        pb[0] = 6;
-        pb[1] = 7;
-        pb[2] = 8;
+        pb[0] = 4;
+        pb[1] = 5;
+        pb[2] = 6;
 
-		PB_Scenes = new Scene[3];
-		PB_Scenes[0] = SceneManager.GetSceneByName("PBReact");
-		PB_Scenes[1] = SceneManager.GetSceneByName("PBHell");
-		PB_Scenes[2] = SceneManager.GetSceneByName("PBCross");
+//		PB_Scenes = new Scene[3];
+//		PB_Scenes[0] = SceneManager.GetSceneByName("PBReact");
+//		PB_Scenes[1] = SceneManager.GetSceneByName("PBHell");
+//		PB_Scenes[2] = SceneManager.GetSceneByName("PBCross");
 	}
 	
 	// Update is called once per frame
