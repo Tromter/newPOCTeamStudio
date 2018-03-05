@@ -38,7 +38,7 @@ public class MenuManager : MonoBehaviour {
 
 		PB_Scenes = new Scene[3];
 		PB_Scenes[0] = SceneManager.GetSceneByName("PBReact");
-		PB_Scenes[1] = SceneManager.GetSceneByName("PBHell");
+		PB_Scenes[1] = SceneManager.GetSceneByName("PBHell") 
 		PB_Scenes[2] = SceneManager.GetSceneByName("PBCross");
 	}
 	
